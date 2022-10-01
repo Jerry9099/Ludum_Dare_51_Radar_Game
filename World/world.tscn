@@ -1,11 +1,11 @@
 [gd_scene load_steps=10 format=2]
 
-[ext_resource path="res://Camera/Camera Holder.gd" type="Script" id=1]
-[ext_resource path="res://assets_3D/screens.glb" type="PackedScene" id=2]
-[ext_resource path="res://assets_3D/pixil-frame-0.png" type="Texture" id=3]
-[ext_resource path="res://assets_3D/pixil-frame-0 (1).png" type="Texture" id=4]
-[ext_resource path="res://Camera/raycast.gd" type="Script" id=5]
-[ext_resource path="res://assets_3D/RadarScreen.glb" type="PackedScene" id=6]
+[ext_resource path="res://Camera/raycast.gd" type="Script" id=1]
+[ext_resource path="res://Camera/Camera Holder.gd" type="Script" id=2]
+[ext_resource path="res://assets_3D/RadarScreen.glb" type="PackedScene" id=3]
+[ext_resource path="res://assets_3D/screens.glb" type="PackedScene" id=4]
+[ext_resource path="res://assets_3D/pixil-frame-0.png" type="Texture" id=5]
+[ext_resource path="res://assets_3D/pixil-frame-0 (1).png" type="Texture" id=6]
 
 [sub_resource type="Environment" id=1]
 background_mode = 1
@@ -23,11 +23,11 @@ fog_sun_amount = 1.0
 [node name="Player" type="Node" parent="."]
 
 [node name="Camera Holder" type="Spatial" parent="Player"]
-script = ExtResource( 1 )
+script = ExtResource( 2 )
 
 [node name="Camera" type="Camera" parent="Player/Camera Holder"]
 environment = SubResource( 1 )
-script = ExtResource( 5 )
+script = ExtResource( 1 )
 
 [node name="CenterContainer" type="CenterContainer" parent="Player/Camera Holder/Camera"]
 anchor_right = 1.0
@@ -40,7 +40,7 @@ margin_top = 285.0
 margin_right = 527.0
 margin_bottom = 315.0
 rect_min_size = Vector2( 30, 30 )
-texture = ExtResource( 3 )
+texture = ExtResource( 5 )
 expand = true
 stretch_mode = 5
 
@@ -50,7 +50,7 @@ margin_top = 275.0
 margin_right = 537.0
 margin_bottom = 325.0
 rect_min_size = Vector2( 50, 50 )
-texture = ExtResource( 4 )
+texture = ExtResource( 6 )
 expand = true
 stretch_mode = 5
 
@@ -76,10 +76,10 @@ spot_range = 66.952
 spot_angle = 26.83
 spot_angle_attenuation = 0.101531
 
-[node name="RadarScreen" parent="Environment" instance=ExtResource( 6 )]
+[node name="RadarScreen" parent="Environment" instance=ExtResource( 3 )]
 transform = Transform( 1, 0, 0, 0, -0.886268, 0.463172, 0, -0.463172, -0.886268, -0.381704, -1.3503, -1.3135 )
 
-[node name="screens" parent="Environment" instance=ExtResource( 2 )]
+[node name="screens" parent="Environment" instance=ExtResource( 4 )]
 transform = Transform( -2.18557e-08, 0, -0.5, 0, 0.5, 0, 0.5, 0, -2.18557e-08, 0, -1.89046, -3.15926 )
 
 [node name="ViewportContainer" type="ViewportContainer" parent="."]
