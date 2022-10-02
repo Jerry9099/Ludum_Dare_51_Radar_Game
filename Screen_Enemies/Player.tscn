@@ -11,7 +11,7 @@ radius = 0.962885
 radius = 1.02806
 
 [node name="Player" type="KinematicBody"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.631056, 0 )
+transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0.631056, 0 )
 script = ExtResource( 2 )
 __meta__ = {
 "_edit_group_": true

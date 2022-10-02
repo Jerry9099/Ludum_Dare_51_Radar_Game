@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Screen_Enemies/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Screen_Enemies/Main.gd" type="Script" id=2]
@@ -9,6 +9,9 @@ extents = Vector3( 30, 1, 30 )
 
 [sub_resource type="CubeMesh" id=2]
 size = Vector3( 60, 2, 60 )
+
+[sub_resource type="SpatialMaterial" id=9]
+albedo_color = Color( 0.00784314, 0, 0.054902, 1 )
 
 [sub_resource type="CylinderMesh" id=3]
 
@@ -26,7 +29,7 @@ script = ExtResource( 2 )
 missile_scene = ExtResource( 3 )
 
 [node name="Ground" type="StaticBody" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2, 0 )
 collision_layer = 4
 collision_mask = 0
 
@@ -36,20 +39,21 @@ shape = SubResource( 8 )
 [node name="MeshInstance" type="MeshInstance" parent="Ground"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.552805, 0 )
 mesh = SubResource( 2 )
+material/0 = SubResource( 9 )
 
 [node name="DirectionalLight" type="DirectionalLight" parent="."]
 transform = Transform( 1, 0, 0, 0, -0.226906, 0.973917, 0, -0.973917, -0.226906, 0, 17.8478, 0 )
 shadow_enabled = true
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.165458, 0 )
+transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, -0.165458, 0 )
 collision_mask = 6
 
 [node name="CameraPivot" type="Position3D" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.01111, 0 )
 
 [node name="Camera" type="Camera" parent="CameraPivot"]
-transform = Transform( 1, 0, 0, 0, 0.8428, 0.538227, 0, -0.538227, 0.8428, -0.0254765, 5.65911, 7.26922 )
+transform = Transform( 1, 0, 0, 0, -0.0358592, 0.999357, 0, -0.999357, -0.0358592, -0.0254765, 8.41235, 0.345621 )
 projection = 1
 size = 19.0
 
@@ -84,7 +88,6 @@ curve = SubResource( 5 )
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -18.2762, 0, -18.0703 )
 
 [node name="MissileTimer" type="Timer" parent="."]
-wait_time = 15.0
 autostart = true
 
 [connection signal="hit" from="Player" to="." method="_on_Player_hit"]
