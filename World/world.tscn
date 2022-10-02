@@ -1,9 +1,8 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Camera/raycast.gd" type="Script" id=1]
 [ext_resource path="res://Camera/Camera Holder.gd" type="Script" id=2]
-[ext_resource path="res://assets_3D/RadarScreen.glb" type="PackedScene" id=3]
-[ext_resource path="res://assets_3D/screens.glb" type="PackedScene" id=4]
+[ext_resource path="res://assets_3D/RadarMonitorsNewAnglelarge_2.glb" type="PackedScene" id=3]
 [ext_resource path="res://assets_3D/pixil-frame-0.png" type="Texture" id=5]
 [ext_resource path="res://assets_3D/pixil-frame-0 (1).png" type="Texture" id=6]
 
@@ -76,11 +75,8 @@ spot_range = 66.952
 spot_angle = 26.83
 spot_angle_attenuation = 0.101531
 
-[node name="RadarScreen" parent="Environment" instance=ExtResource( 3 )]
-transform = Transform( 1, 0, 0, 0, -0.886268, 0.463172, 0, -0.463172, -0.886268, -0.381704, -1.3503, -1.3135 )
-
-[node name="screens" parent="Environment" instance=ExtResource( 4 )]
-transform = Transform( -2.18557e-08, 0, -0.5, 0, 0.5, 0, 0.5, 0, -2.18557e-08, 0, -1.89046, -3.15926 )
+[node name="RadarMonitorsNewAnglelarge_2" parent="Environment" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0 )
 
 [node name="ViewportContainer" type="ViewportContainer" parent="."]
 margin_right = 100.0
