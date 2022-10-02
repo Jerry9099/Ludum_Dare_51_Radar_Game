@@ -49,13 +49,13 @@ shadow_enabled = true
 transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, -0.165458, 0 )
 collision_mask = 6
 
-[node name="CameraPivot" type="Position3D" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.01111, 0 )
+[node name="CameraPivot" type="Position3D" parent="Player"]
+transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 8.35314, 0 )
 
-[node name="Camera" type="Camera" parent="CameraPivot"]
+[node name="Camera" type="Camera" parent="Player/CameraPivot"]
 transform = Transform( 1, 0, 0, 0, -0.0358592, 0.999357, 0, -0.999357, -0.0358592, -0.0254765, 8.41235, 0.345621 )
 projection = 1
-size = 19.0
+size = 22.0
 
 [node name="Cylinders" type="Spatial" parent="."]
 visible = false
