@@ -6,7 +6,16 @@ export var MAX_SPEED = 6
 export var ACCELERATION = 5
 export var DECELERATION = 5
 
+export var limit_size_square = 30
+
+var top_limit = limit_size_square
+var bottom_limit = -limit_size_square
+var right_limit = limit_size_square
+var left_limit = -limit_size_square
+
+
 var velocity = Vector3(0,0,-1)
+
 var HP
 
 func _ready():
