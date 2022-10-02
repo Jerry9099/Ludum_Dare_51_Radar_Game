@@ -2,9 +2,9 @@
 
 [ext_resource path="res://3d_tutorial/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://3d_tutorial/Main.gd" type="Script" id=2]
-[ext_resource path="res://3d_tutorial/Mob.tscn" type="PackedScene" id=3]
+[ext_resource path="res://3d_tutorial/Missile.tscn" type="PackedScene" id=3]
 
-[sub_resource type="BoxShape" id=1]
+[sub_resource type="BoxShape" id=8]
 extents = Vector3( 30, 1, 30 )
 
 [sub_resource type="CubeMesh" id=2]
@@ -23,7 +23,7 @@ _data = {
 
 [node name="Main" type="Node"]
 script = ExtResource( 2 )
-mob_scene = ExtResource( 3 )
+missile_scene = ExtResource( 3 )
 
 [node name="Ground" type="StaticBody" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0 )
@@ -31,7 +31,7 @@ collision_layer = 4
 collision_mask = 0
 
 [node name="CollisionShape" type="CollisionShape" parent="Ground"]
-shape = SubResource( 1 )
+shape = SubResource( 8 )
 
 [node name="MeshInstance" type="MeshInstance" parent="Ground"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.552805, 0 )
@@ -76,14 +76,15 @@ mesh = SubResource( 3 )
 material/0 = SubResource( 4 )
 
 [node name="SpawnPath" type="Path" parent="."]
+visible = false
 curve = SubResource( 5 )
 
 [node name="SpawnLocation" type="PathFollow" parent="SpawnPath"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -18.2762, 0, -18.0703 )
 
-[node name="MobTimer" type="Timer" parent="."]
+[node name="MissileTimer" type="Timer" parent="."]
 wait_time = 0.5
 autostart = true
 
 [connection signal="hit" from="Player" to="." method="_on_Player_hit"]
-[connection signal="timeout" from="MobTimer" to="." method="_on_MobTimer_timeout"]
+[connection signal="timeout" from="MissileTimer" to="." method="_on_MissileTimer_timeout"]

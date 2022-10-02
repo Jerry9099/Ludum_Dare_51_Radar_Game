@@ -7,8 +7,8 @@
 radius = 0.879386
 
 [sub_resource type="CylinderShape" id=2]
-height = 0.415482
-radius = 1.25373
+height = 0.503411
+radius = 1.16619
 
 [node name="Player" type="KinematicBody"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.631056, 0 )
@@ -27,13 +27,13 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.152483, 0.632488, 0 )
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.372339, 0 )
 shape = SubResource( 1 )
 
-[node name="MobDetector" type="Area" parent="."]
+[node name="MissileDetector" type="Area" parent="."]
 collision_layer = 0
 collision_mask = 2
 monitorable = false
 
-[node name="CollisionShape" type="CollisionShape" parent="MobDetector"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.585642, 0 )
+[node name="CollisionShape" type="CollisionShape" parent="MissileDetector"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.472359, 0 )
 shape = SubResource( 2 )
 
-[connection signal="body_entered" from="MobDetector" to="." method="_on_MobDetector_body_entered"]
+[connection signal="body_entered" from="MissileDetector" to="." method="_on_MissileDetector_body_entered"]
