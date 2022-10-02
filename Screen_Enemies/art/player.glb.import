@@ -2,12 +2,12 @@
 
 importer="scene"
 type="PackedScene"
-path="res://.import/mob.glb-9d234ac4a436c7ee89fa0efd5e6361f1.scn"
+path="res://.import/player.glb-bf02ac850fe7e5317fcc88e46e79e3d7.scn"
 
 [deps]
 
-source_file="res://3d_tutorial/art/mob.glb"
-dest_files=[ "res://.import/mob.glb-9d234ac4a436c7ee89fa0efd5e6361f1.scn" ]
+source_file="res://Screen_Enemies/art/player.glb"
+dest_files=[ "res://.import/player.glb-bf02ac850fe7e5317fcc88e46e79e3d7.scn" ]
 
 [params]
 
