@@ -2,10 +2,11 @@ extends KinematicBody
 signal hit
 
 # How fast the player moves in meters per second.
-export var speed = 4
-export var fall_acceleration = 75
+export var MAX_SPEED = 6
+export var ACCELERATION = 5
+export var DECELERATION = 5
 
-var velocity = Vector3.ZERO
+var velocity = Vector3()
 var HP
 
 func _ready():
@@ -14,36 +15,32 @@ func _ready():
 	
 
 func _physics_process(delta):
+	set_axis_lock(PhysicsServer.BODY_AXIS_LINEAR_Y, true)
+	
 	# Local variable to store the input direction.
-	var direction = Vector3.ZERO
-	
-	# Check for each move input and update the direction
-	if Input.is_action_pressed("move_right"):
-		direction.x += 1
-	if Input.is_action_pressed("move_left"):
-		direction.x -= 1
-	if Input.is_action_pressed("move_back"):
-# Notice how we are working with the vector's x and z axes.
-		# In 3D, the XZ plane is the ground plane.
-		direction.z += 1
-	if Input.is_action_pressed("move_forward"):
-		direction.z -= 1
-	if direction != Vector3.ZERO:
+	var direction = Vector3()
+	direction.x = Input.get_action_strength("move_right") - Input.get_action_strength("move_left")
+	direction.z = Input.get_action_strength("move_back") - Input.get_action_strength("move_forward")
+	if direction.length_squared() > 1:
 		direction = direction.normalized()
-		$Pivot.look_at(translation + direction, Vector3.UP)
 		
-	# Ground velocity
-	velocity.x = direction.x * speed
-	velocity.z = direction.z * speed
-	# Vertical velocity
-	velocity.y -= fall_acceleration * delta
-	
-	# Moving the character
+	var hvel = velocity
+	hvel.y = 0
+
+	var target = direction * MAX_SPEED
+	var acceleration
+	if direction.dot(hvel) > 0:
+		acceleration = ACCELERATION
+	else:
+		acceleration = DECELERATION
+
+	hvel = hvel.linear_interpolate(target, acceleration * delta)
+
+	# Assign hvel's values back to velocity, and then move.
+	velocity.x = hvel.x
+	velocity.z = hvel.z
+	$Pivot.look_at(translation + velocity.normalized(), Vector3.UP)
 	velocity = move_and_slide(velocity, Vector3.UP)
-	for index in range(get_slide_count()):
-		# We check every collision that occurred this frame.
-		var collision = get_slide_collision(index)
-		# If we collide with a monster...
 
 func die():
 	emit_signal("hit")

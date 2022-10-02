@@ -7,7 +7,7 @@ export var min_speed = 1
 # Maximum speed of the mob in meters per second.
 export var max_speed = 2
 # Steer force to push the missile to track the spaceship.
-export var steer_force = 6
+export var steer_force = 1.2
 # Maximum track speed
 export var track_speed = 10
 
@@ -17,9 +17,11 @@ var acceleration = Vector3.ZERO
 var target = null
 
 func _physics_process(_delta):
+	set_axis_lock(PhysicsServer.BODY_AXIS_LINEAR_Y, true)
 	acceleration = seek()
 	velocity += acceleration * _delta
-	velocity = velocity.normalized() * min(velocity.length(), max_speed) 
+	velocity = velocity.normalized() * min(velocity.length(), max_speed)
+	look_at_from_position(self.transform.origin, self.transform.origin + velocity, Vector3.UP)
 	move_and_slide(velocity)
 
 # We will call this function from the Main scene.
