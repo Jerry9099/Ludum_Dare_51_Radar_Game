@@ -48,9 +48,6 @@ func seek():
 		var desired = (target.transform.origin - transform.origin).normalized() * track_speed
 		steer = (desired - velocity).normalized() * steer_force
 	return steer
-
-func _on_VisibilityNotifier_screen_exited():
-	explode()
 	
 func _on_LifeTime_timeout():
 	explode()
@@ -63,8 +60,12 @@ func explode():
 
 
 func _on_PlayerDetector_body_entered(body):
-	$AnimationPlayer.play("fade_in")
+	if body.has_method("check"):
+		$AnimationPlayer.play("fade_in")
+	else:
+		explode()
 	
 
 func _on_PlayerDetector_body_exited(body):
-	$AnimationPlayer.play("fade_out")
+	if body.has_method("check"):
+		$AnimationPlayer.play("fade_out")
