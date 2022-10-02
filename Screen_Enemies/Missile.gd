@@ -3,11 +3,11 @@ extends KinematicBody
 signal squashed
 
 # Minimum speed of the mob in meters per second.
-export var min_speed = 10
+export var min_speed = 1
 # Maximum speed of the mob in meters per second.
-export var max_speed = 18
+export var max_speed = 2
 # Steer force to push the missile to track the spaceship.
-export var steer_force = 50.0
+export var steer_force = 6
 # Maximum track speed
 export var track_speed = 10
 
@@ -45,19 +45,15 @@ func seek():
 	return steer
 
 func _on_VisibilityNotifier_screen_exited():
-	queue_free()
+	explode()
+	
+func _on_LifeTime_timeout():
+	explode()
+
 
 func explode():
 	#$Particles2D.emitting = false
 	set_physics_process(false)
-	#$AnimationPlayer.play("explode")
-	#yield($AnimationPlayer, "animation_finished")
 	queue_free()
-
-func _on_PlayerDetector_body_entered(body):
-	explode()
-
-func _on_Lifetime_timeout():
-	explode()
 
 

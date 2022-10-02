@@ -2,13 +2,16 @@ extends KinematicBody
 signal hit
 
 # How fast the player moves in meters per second.
-export var speed = 14
+export var speed = 4
 export var fall_acceleration = 75
 
 var velocity = Vector3.ZERO
+var HP
 
 func _ready():
 	self.transform.origin.y = 0
+	self.HP = 3
+	
 
 func _physics_process(delta):
 	# Local variable to store the input direction.
@@ -47,4 +50,7 @@ func die():
 	hide()
 	
 func _on_MissileDetector_body_entered(_body):
-	die()
+	HP -= 1
+	_body.explode()
+	if HP==0:
+		die()

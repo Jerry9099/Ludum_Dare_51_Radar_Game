@@ -1,8 +1,8 @@
 [gd_scene load_steps=9 format=2]
 
-[ext_resource path="res://3d_tutorial/Player.tscn" type="PackedScene" id=1]
-[ext_resource path="res://3d_tutorial/Main.gd" type="Script" id=2]
-[ext_resource path="res://3d_tutorial/Missile.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Screen_Enemies/Player.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Screen_Enemies/Main.gd" type="Script" id=2]
+[ext_resource path="res://Screen_Enemies/Missile.tscn" type="PackedScene" id=3]
 
 [sub_resource type="BoxShape" id=8]
 extents = Vector3( 30, 1, 30 )
@@ -46,6 +46,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.165458, 0 )
 collision_mask = 6
 
 [node name="CameraPivot" type="Position3D" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.01111, 0 )
 
 [node name="Camera" type="Camera" parent="CameraPivot"]
 transform = Transform( 1, 0, 0, 0, 0.8428, 0.538227, 0, -0.538227, 0.8428, -0.0254765, 5.65911, 7.26922 )
@@ -83,7 +84,7 @@ curve = SubResource( 5 )
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -18.2762, 0, -18.0703 )
 
 [node name="MissileTimer" type="Timer" parent="."]
-wait_time = 0.5
+wait_time = 15.0
 autostart = true
 
 [connection signal="hit" from="Player" to="." method="_on_Player_hit"]
