@@ -16,6 +16,9 @@ var acceleration = Vector3.ZERO
 
 var target = null
 
+func _ready():
+	$AnimationPlayer.play("hide")
+
 func _physics_process(_delta):
 	set_axis_lock(PhysicsServer.BODY_AXIS_LINEAR_Y, true)
 	acceleration = seek()
@@ -60,4 +63,8 @@ func explode():
 
 
 func _on_PlayerDetector_body_entered(body):
-	pass #Lucas add your fading code/animation here
+	$AnimationPlayer.play("fade_in")
+	
+
+func _on_PlayerDetector_body_exited(body):
+	$AnimationPlayer.play("fade_out")
