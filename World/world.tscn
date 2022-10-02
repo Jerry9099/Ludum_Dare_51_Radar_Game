@@ -25,7 +25,7 @@ fog_sun_amount = 1.0
 script = ExtResource( 2 )
 
 [node name="Camera" type="Camera" parent="Player/Camera Holder"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.449687, 2.33106, 5.19737 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.148493, 2.33106, 5.19737 )
 environment = SubResource( 1 )
 script = ExtResource( 1 )
 
