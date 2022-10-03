@@ -30,8 +30,8 @@ onready var quit_button: Button = find_node("QUIT")
 
 func _on_QUIT_pressed():
 	get_tree().change_scene("res://Dialogue/startDialogue.tscn")
-
+#THIS IS FOR STARTING THE GAME, NOT QUITTING
 
 func _on_START_pressed():
 	get_tree().quit()
-
+#THIS IS FOR QUITING THE GAME, NOT STARTING

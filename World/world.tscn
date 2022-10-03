@@ -164,7 +164,7 @@ mesh = ExtResource( 11 )
 skin = SubResource( 8 )
 
 [node name="Michal2" type="MeshInstance" parent="Environment/McWork"]
-transform = Transform( -1, 8.84874e-08, 1.50992e-07, 8.74206e-08, 0.999975, -0.00705101, 1.51612e-07, 0.00705101, 0.999975, -0.0519472, -0.0155158, 0.0398026 )
+transform = Transform( -1, -1.5206e-07, 1.50992e-07, 1.50992e-07, -0.999975, -0.00705101, 1.5206e-07, -0.00705101, 0.999975, -0.0519472, 6.11601, 0.0398026 )
 material_override = SubResource( 14 )
 mesh = ExtResource( 12 )
 skin = SubResource( 12 )
