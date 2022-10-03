@@ -69,3 +69,13 @@ func _on_PlayerDetector_body_entered(body):
 func _on_PlayerDetector_body_exited(body):
 	if body.has_method("check"):
 		$AnimationPlayer.play("fade_out")
+
+
+func _on_DangerZone_body_entered(body): # TO show the missile if it enters the player's danger zone
+	if body.has_method("die"):
+		$AnimationPlayer.play("fade_in")
+
+
+func _on_DangerZone_body_exited(body):
+	if body.has_method("die"):
+		$AnimationPlayer.play("fade_out")
