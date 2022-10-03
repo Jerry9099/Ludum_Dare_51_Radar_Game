@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://Camera/raycast.gd" type="Script" id=1]
 [ext_resource path="res://Camera/Camera Holder.gd" type="Script" id=2]
@@ -10,6 +10,7 @@
 [ext_resource path="res://assets_3D/McWORK/McWork.glb" type="PackedScene" id=8]
 [ext_resource path="res://Screen_Enemies/Main.tscn" type="PackedScene" id=9]
 [ext_resource path="res://World/world.gd" type="Script" id=10]
+[ext_resource path="res://assets_3D/McShare - Monitor Meshes/Michal.obj" type="ArrayMesh" id=11]
 
 [sub_resource type="Environment" id=1]
 background_mode = 1
@@ -39,6 +40,26 @@ uv1_offset = Vector3( 0.672, 1, 0.467 )
 uv1_triplanar = true
 uv1_triplanar_sharpness = 315.173
 uv2_triplanar_sharpness = 213.836
+
+[sub_resource type="ViewportTexture" id=9]
+flags = 6
+viewport_path = NodePath("Monitors_Viewport_Axis/RadarScreenViewport/Viewport")
+
+[sub_resource type="SpatialMaterial" id=7]
+resource_local_to_scene = true
+flags_ensure_correct_normals = true
+albedo_texture = SubResource( 9 )
+normal_enabled = true
+normal_scale = 16.0
+uv1_scale = Vector3( 0.4, 1, 0.454 )
+uv1_offset = Vector3( 0.658, 0, 0.515 )
+uv1_triplanar = true
+uv1_triplanar_sharpness = 110.689
+uv2_triplanar = true
+uv2_triplanar_sharpness = 11.2384
+
+[sub_resource type="Skin" id=8]
+resource_local_to_scene = true
 
 [node name="world" type="Spatial"]
 script = ExtResource( 10 )
@@ -104,12 +125,20 @@ spot_angle = 26.83
 spot_angle_attenuation = 0.101531
 
 [node name="McWork" parent="Environment" instance=ExtResource( 8 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.0635443 )
 
 [node name="RadarScreenMesh" type="MeshInstance" parent="Environment/McWork"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.026051, 0.451407, 0.113084 )
+visible = false
 material_override = SubResource( 4 )
 cast_shadow = 0
 mesh = ExtResource( 3 )
+
+[node name="Michal" type="MeshInstance" parent="Environment/McWork"]
+transform = Transform( -1, 0, 8.74228e-08, 0, 1, 0, 8.74228e-08, 0, 1, -0.800352, 0.388055, 0.224095 )
+material_override = SubResource( 7 )
+mesh = ExtResource( 11 )
+skin = SubResource( 8 )
 
 [node name="Monitors_Viewport_Axis" type="Spatial" parent="."]
 
