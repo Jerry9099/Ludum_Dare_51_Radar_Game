@@ -5,7 +5,7 @@
 [ext_resource path="res://assets_3D/McShare - Monitor Meshes/McWorkMcRadar.obj" type="ArrayMesh" id=3]
 [ext_resource path="res://World/PAUSE_SCREEN.tscn" type="PackedScene" id=4]
 [ext_resource path="res://assets_3D/pixil-frame-0.png" type="Texture" id=5]
-[ext_resource path="res://crosshair001.png" type="Texture" id=6]
+[ext_resource path="res://assets_2D/crosshair001.png" type="Texture" id=6]
 [ext_resource path="res://World/Player.gd" type="Script" id=7]
 [ext_resource path="res://assets_3D/McWORK/McWork.glb" type="PackedScene" id=8]
 [ext_resource path="res://Screen_Enemies/Main.tscn" type="PackedScene" id=9]
