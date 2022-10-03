@@ -9,6 +9,8 @@ export var priority = 0
 onready var camera = get_parent()
 var base_location = Vector3()
 
+onready var animator: AnimationPlayer = $AnimationPlayer
+
 func _ready():
 	base_location = camera.get_translation()
 
@@ -47,6 +49,7 @@ func _new_shake():
 	$ShakeTween.start()
 	#print(base_location)
 	#print(rand)
+	animator.play("Lights")
 
 func _reset():
 	$ShakeTween.interpolate_property(camera, "translation", camera.translation, base_location, $Frequency.wait_time, TRANS, EASE)
@@ -64,3 +67,6 @@ func _on_Frequency_timeout():
 func _on_Duration_timeout():
 	_reset()
 	$Frequency.stop()
+	
+
+
