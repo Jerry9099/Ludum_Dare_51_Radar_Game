@@ -29,14 +29,15 @@ func _on_Player_hit():
 	print("hp update attempt")
 	print($Environment/McWork/SCORE.text)
 
-func _on_ScoreTimer_timeout():
-	print("score timer timeout")
-	if $Radarmain/Player.HP != 0:
-		score += 10
-		$Environment/McWork/SCORE.text = "Score: %s" % score + "\nHP: %s" % score
-
 func _on_Player_dead():
 
 	get_tree().change_scene("res://Dialogue/endDialogue.tscn")
 	#play dead sounds, etc
 
+
+
+func _on_ScoreTimer_timeout():
+	print("score timer timeout")
+	if $RadarMain/Player.HP != 0:
+		score += 10
+		$Environment/McWork/SCORE.text = "Score: %s" % score + "\nHP: %s" % $RadarMain/Player.HP
