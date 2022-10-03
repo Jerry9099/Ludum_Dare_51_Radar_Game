@@ -65,4 +65,6 @@ func _on_MissileDetector_body_entered(_body):
 		die()
 		
 func _on_Player_dead():
+	print("aaa")
+	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 	get_tree().change_scene("res://Dialogue/endDialogue.tscn")
