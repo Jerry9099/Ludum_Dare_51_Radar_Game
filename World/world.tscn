@@ -1,7 +1,8 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://Camera/raycast.gd" type="Script" id=1]
 [ext_resource path="res://Camera/Camera Holder.gd" type="Script" id=2]
+[ext_resource path="res://assets_3D/McWORK/REVAMPEDTEXTUREMCFLURRYFLYINGFUCK.glb" type="PackedScene" id=3]
 [ext_resource path="res://World/PAUSE_SCREEN.tscn" type="PackedScene" id=4]
 [ext_resource path="res://assets_3D/pixil-frame-0.png" type="Texture" id=5]
 [ext_resource path="res://assets_3D/pixil-frame-0 (1).png" type="Texture" id=6]
@@ -18,12 +19,16 @@ glow_enabled = true
 
 [sub_resource type="QuadMesh" id=3]
 
+[sub_resource type="Environment" id=4]
+glow_enabled = true
+
 [node name="world" type="Spatial"]
 
 [node name="Player" type="Node" parent="."]
 script = ExtResource( 7 )
 
 [node name="Camera Holder" type="Spatial" parent="Player"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.69107, -0.0659122, -2.74048 )
 script = ExtResource( 2 )
 
 [node name="Camera" type="Camera" parent="Player/Camera Holder"]
@@ -65,6 +70,9 @@ spot_angle_attenuation = 0.0220971
 
 [node name="Environment" type="Node" parent="."]
 
+[node name="REVAMPEDTEXTUREMCFLURRYFLYINGFUCK" parent="Environment" instance=ExtResource( 3 )]
+visible = false
+
 [node name="Display Console" type="Node" parent="Environment"]
 
 [node name="MeshInstance" type="MeshInstance" parent="Environment"]
@@ -81,3 +89,8 @@ spot_angle = 26.83
 spot_angle_attenuation = 0.101531
 
 [node name="McWork" parent="Environment" instance=ExtResource( 8 )]
+
+[node name="Node" type="Node" parent="."]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="Node"]
+environment = SubResource( 4 )
