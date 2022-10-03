@@ -96,5 +96,6 @@ script = ExtResource( 4 )
 
 [connection signal="timeout" from="MarginContainer/Panel/Label/Letter_Timer" to="MarginContainer/Panel/Label" method="_on_Letter_Timer_timeout"]
 [connection signal="timeout" from="MarginContainer/Panel/Label/message_Timer" to="MarginContainer/Panel/Label" method="_on_message_Timer_timeout"]
+[connection signal="button_down" from="Skip" to="ButtonClickAudio" method="_on_Skip_button_down"]
 [connection signal="pressed" from="Skip" to="MarginContainer/Panel/Label" method="_on_Button_pressed"]
 [connection signal="pressed" from="Continue" to="MarginContainer/Panel/Label" method="_on_Continue_pressed"]

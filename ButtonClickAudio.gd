@@ -28,3 +28,7 @@ func _on_Button_button_down():
 func _on_RESUME_button_down():
 	if get_tree().paused:
 		play()
+
+
+func _on_Skip_button_down():
+	play() # Replace with function body.
