@@ -201,7 +201,6 @@ spot_attenuation = 1.07177
 spot_angle_attenuation = 0.0220971
 
 [node name="PAUSE_MENU" parent="Player" instance=ExtResource( 4 )]
-visible = false
 
 [node name="Environment" type="Node" parent="."]
 
