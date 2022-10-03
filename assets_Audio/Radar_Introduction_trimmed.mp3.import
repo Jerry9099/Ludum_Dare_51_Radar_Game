@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Radar_Introduction_trimmed.mp3-f6ebe738b7742a48a9919914dc3d919e.mp3str"
+
+[deps]
+
+source_file="res://assets_Audio/Radar_Introduction_trimmed.mp3"
+dest_files=[ "res://.import/Radar_Introduction_trimmed.mp3-f6ebe738b7742a48a9919914dc3d919e.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0
