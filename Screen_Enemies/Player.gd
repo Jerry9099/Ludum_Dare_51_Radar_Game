@@ -2,9 +2,9 @@ extends KinematicBody
 signal hit
 
 # How fast the player moves in meters per second.
-export var MAX_SPEED = 6
-export var ACCELERATION = 5
-export var DECELERATION = 5
+export var MAX_SPEED = 3
+export var ACCELERATION = 1
+export var DECELERATION = 1
 
 export var limit_size_square = 30
 
@@ -14,7 +14,7 @@ var right_limit = limit_size_square
 var left_limit = -limit_size_square
 
 
-var velocity = Vector3(0,0,-1)
+var velocity = Vector3.ZERO
 
 var HP
 
@@ -57,6 +57,5 @@ func die():
 	
 func _on_MissileDetector_body_entered(_body):
 	HP -= 1
-	_body.explode()
 	if HP==0:
 		die()
