@@ -2,6 +2,7 @@
 
 [ext_resource path="res://Camera/raycast.gd" type="Script" id=1]
 [ext_resource path="res://Camera/Camera Holder.gd" type="Script" id=2]
+[ext_resource path="res://assets_3D/McShare - Monitor Meshes/McWorkMcRadar.obj" type="ArrayMesh" id=3]
 [ext_resource path="res://World/PAUSE_SCREEN.tscn" type="PackedScene" id=4]
 [ext_resource path="res://assets_3D/pixil-frame-0.png" type="Texture" id=5]
 [ext_resource path="res://assets_3D/pixil-frame-0 (1).png" type="Texture" id=6]
@@ -18,16 +19,15 @@ glow_enabled = true
 
 [sub_resource type="QuadMesh" id=3]
 
-[sub_resource type="ViewportTexture" id=6]
+[sub_resource type="ViewportTexture" id=5]
 viewport_path = NodePath("Viewport_Axis/ViewportContainer/Viewport")
 
-[sub_resource type="SpatialMaterial" id=5]
+[sub_resource type="SpatialMaterial" id=4]
 resource_local_to_scene = true
-flags_unshaded = true
-albedo_texture = SubResource( 6 )
-
-[sub_resource type="QuadMesh" id=4]
-size = Vector2( 2, 2 )
+albedo_texture = SubResource( 5 )
+uv1_scale = Vector3( 0.5, 0.5, 0.5 )
+uv1_offset = Vector3( 0.7, 1, 0.5 )
+uv1_triplanar = true
 
 [node name="world" type="Spatial"]
 
@@ -78,7 +78,7 @@ spot_angle_attenuation = 0.0220971
 
 [node name="Display Console" type="Node" parent="Environment"]
 
-[node name="MeshInstance" type="MeshInstance" parent="Environment"]
+[node name="FloorMesh" type="MeshInstance" parent="Environment"]
 transform = Transform( 100, 0, 0, 0, -4.37114e-06, 100, 0, -100, -4.37114e-06, 0, -3.51202, 0 )
 mesh = SubResource( 3 )
 skeleton = NodePath("")
@@ -93,21 +93,27 @@ spot_angle_attenuation = 0.101531
 
 [node name="McWork" parent="Environment" instance=ExtResource( 8 )]
 
-[node name="TopScreen" type="MeshInstance" parent="Environment/McWork"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.384, -1.04647 )
-material_override = SubResource( 5 )
-mesh = SubResource( 4 )
+[node name="RadarScreenMesh" type="MeshInstance" parent="Environment/McWork"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.026051, 0.474204, 0.113084 )
+material_override = SubResource( 4 )
+cast_shadow = 0
+mesh = ExtResource( 3 )
 
 [node name="Viewport_Axis" type="Spatial" parent="."]
 
 [node name="ViewportContainer" type="ViewportContainer" parent="Viewport_Axis"]
-margin_right = 100.0
-margin_bottom = 100.0
+margin_left = -925.0
+margin_top = -805.0
+margin_right = -425.0
+margin_bottom = -305.0
 
 [node name="Viewport" type="Viewport" parent="Viewport_Axis/ViewportContainer"]
-size = Vector2( 100, 100 )
+size = Vector2( 500, 500 )
 handle_input_locally = false
 render_target_update_mode = 3
 
 [node name="Camera" type="Camera" parent="Viewport_Axis/ViewportContainer/Viewport"]
-transform = Transform( 1, 0, 0, 0, 0.999923, -0.012409, 0, 0.012409, 0.999923, -0.389107, 3.16731, 2.5 )
+transform = Transform( 1, 0, 0, 0, 0.868995, 0.494822, 0, -0.494822, 0.868995, -0.128562, 3.96137, 4.71696 )
+projection = 1
+fov = 98.6
+size = 10.0
