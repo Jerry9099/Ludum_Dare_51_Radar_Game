@@ -12,7 +12,7 @@ func _ready():
 	$RadarMain/Player.connect("died", self, "_on_Player_dead")
 	$Environment/McWork/SCORE.text = "Score: %s" % score + "\nHP: %s" % $RadarMain/Player.HP
 	
-	$ScoreTimer.connect("timeout", self, "_on_ScoreTimer_timeout")
+	#$ScoreTimer.connect("timeout", self, "_on_ScoreTimer_timeout")
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
