@@ -29,9 +29,9 @@ func _on_RESUME_pressed():
 
 
 func _on_QUIT_pressed():
-	get_tree().quit()
+	get_tree().change_scene("res://Dialogue/startDialogue.tscn")
 
 
 func _on_START_pressed():
-	get_tree().change_scene("res://World/world.tscn")
-	pass # Replace with function body.
+	get_tree().quit()
+
