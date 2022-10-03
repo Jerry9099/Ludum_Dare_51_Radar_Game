@@ -22,6 +22,7 @@ func _process(delta):
 
 func _on_Player_hit():
 	$Player/CameraHolder/Camera/Screenshake.start()
+	$Audio/MissileHitSound.play()
 
 func _on_Player_dead():
 

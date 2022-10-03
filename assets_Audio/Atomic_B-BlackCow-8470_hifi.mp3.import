@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Atomic_B-BlackCow-8470_hifi.mp3-86347263bfd10b7f43a5bfc801594624.mp3str"
+
+[deps]
+
+source_file="res://assets_Audio/Atomic_B-BlackCow-8470_hifi.mp3"
+dest_files=[ "res://.import/Atomic_B-BlackCow-8470_hifi.mp3-86347263bfd10b7f43a5bfc801594624.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0
