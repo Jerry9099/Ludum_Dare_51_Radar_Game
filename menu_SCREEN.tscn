@@ -1,9 +1,9 @@
 [gd_scene load_steps=18 format=2]
 
-[ext_resource path="res://World/menu_SCREEN.gd" type="Script" id=1]
+[ext_resource path="res://menu_SCREEN.gd" type="Script" id=1]
 [ext_resource path="res://assets_2D/futura/futuraTHEME.tres" type="Theme" id=2]
 [ext_resource path="res://assets_2D/futura/Futura Medium Italic font.ttf" type="DynamicFontData" id=3]
-[ext_resource path="res://assets_2D/futura/futura medium bt.ttf" type="DynamicFontData" id=4]
+[ext_resource path="res://Dialogue/Godot-Fontpack-d244bf6170b399a6d4d26a0d906058ddf2dafdf1/Godot-Fontpack-d244bf6170b399a6d4d26a0d906058ddf2dafdf1/fonts/xolonium/xolonium-fonts-4.1/ttf/Xolonium-Regular.ttf" type="DynamicFontData" id=4]
 
 [sub_resource type="StyleBoxFlat" id=1]
 corner_radius_top_left = 10
@@ -18,6 +18,21 @@ anti_aliasing_size = 2.236
 size = 50
 extra_spacing_top = 43
 font_data = ExtResource( 4 )
+
+[sub_resource type="DynamicFont" id=19]
+font_data = ExtResource( 3 )
+
+[sub_resource type="Theme" id=3]
+default_font = SubResource( 19 )
+
+[sub_resource type="StyleBoxFlat" id=4]
+bg_color = Color( 0.462745, 0.184314, 0.184314, 1 )
+
+[sub_resource type="StyleBoxFlat" id=5]
+bg_color = Color( 0.313726, 0.0980392, 0.0980392, 1 )
+
+[sub_resource type="StyleBoxFlat" id=6]
+bg_color = Color( 0.419608, 0.188235, 0.188235, 1 )
 
 [sub_resource type="ShaderMaterial" id=11]
 
@@ -35,21 +50,6 @@ bg_color = Color( 0.215686, 0.215686, 0.254902, 1 )
 
 [sub_resource type="StyleBoxFlat" id=10]
 bg_color = Color( 0.27451, 0.27451, 0.313726, 1 )
-
-[sub_resource type="DynamicFont" id=19]
-font_data = ExtResource( 3 )
-
-[sub_resource type="Theme" id=3]
-default_font = SubResource( 19 )
-
-[sub_resource type="StyleBoxFlat" id=4]
-bg_color = Color( 0.462745, 0.184314, 0.184314, 1 )
-
-[sub_resource type="StyleBoxFlat" id=5]
-bg_color = Color( 0.313726, 0.0980392, 0.0980392, 1 )
-
-[sub_resource type="StyleBoxFlat" id=6]
-bg_color = Color( 0.419608, 0.188235, 0.188235, 1 )
 
 [node name="MAIN_MENU" type="ColorRect"]
 pause_mode = 2
@@ -100,22 +100,9 @@ margin_right = 480.0
 margin_bottom = 112.0
 
 [node name="START" type="Button" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer"]
-material = SubResource( 11 )
 margin_top = 116.0
 margin_right = 480.0
 margin_bottom = 176.0
-mouse_default_cursor_shape = 2
-size_flags_vertical = 3
-theme = SubResource( 8 )
-custom_styles/hover = SubResource( 9 )
-custom_styles/pressed = SubResource( 12 )
-custom_styles/normal = SubResource( 10 )
-text = "START"
-
-[node name="QUIT" type="Button" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer"]
-margin_top = 180.0
-margin_right = 480.0
-margin_bottom = 240.0
 mouse_default_cursor_shape = 2
 size_flags_vertical = 3
 theme = SubResource( 3 )
@@ -123,7 +110,20 @@ theme_type_variation = "FUTURA SLANT"
 custom_styles/hover = SubResource( 4 )
 custom_styles/pressed = SubResource( 5 )
 custom_styles/normal = SubResource( 6 )
+text = "START"
+
+[node name="QUIT" type="Button" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer"]
+material = SubResource( 11 )
+margin_top = 180.0
+margin_right = 480.0
+margin_bottom = 240.0
+mouse_default_cursor_shape = 2
+size_flags_vertical = 3
+theme = SubResource( 8 )
+custom_styles/hover = SubResource( 9 )
+custom_styles/pressed = SubResource( 12 )
+custom_styles/normal = SubResource( 10 )
 text = "QUIT"
 
-[connection signal="pressed" from="CenterContainer/PanelContainer/MarginContainer/VBoxContainer/START" to="." method="_on_START_pressed"]
-[connection signal="pressed" from="CenterContainer/PanelContainer/MarginContainer/VBoxContainer/QUIT" to="." method="_on_QUIT_pressed"]
+[connection signal="pressed" from="CenterContainer/PanelContainer/MarginContainer/VBoxContainer/START" to="." method="_on_QUIT_pressed"]
+[connection signal="pressed" from="CenterContainer/PanelContainer/MarginContainer/VBoxContainer/QUIT" to="." method="_on_START_pressed"]
