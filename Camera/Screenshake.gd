@@ -12,7 +12,7 @@ var base_location = Vector3()
 func _ready():
 	base_location = camera.get_translation()
 
-func start(duration = 0.6, frequency = 16, amplitude = .1, priority = 0):
+func start(duration = 0.6, frequency = 20, amplitude = .1, priority = 0):
 	
 	if (priority >= self.priority):
 		self.priority = priority
