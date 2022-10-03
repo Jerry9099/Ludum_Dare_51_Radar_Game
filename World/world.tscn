@@ -216,6 +216,7 @@ render_target_update_mode = 3
 [node name="Camera" type="Camera" parent="Monitors_Viewport_Axis/MapScreenViewport/Viewport"]
 transform = Transform( -1, 8.74228e-08, 3.82137e-15, 0, -4.37114e-08, 1, 8.74228e-08, 1, 4.37114e-08, 0, 68.8166, 0 )
 projection = 1
+current = true
 fov = 98.6
 size = 80.0
 

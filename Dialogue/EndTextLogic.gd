@@ -4,8 +4,7 @@ var messages = [
 	"You have succeeded.",
 	"Despite humanity's best efforts,\nyou have bid for enough time\n\n\nto COMPROMISE another craft.",
 	"The old crew sent out a distress signal before perishing,\n\n\n\ntheir struggle will mean NOTHING.",
-	"Like everything else in this pitful galaxy,",
-	"we will CONSUME it all.",
+	"Little by little,/nwe will CONSUME this pitiful galaxy.",
 	"",
 	"However,\nthe damage to the ship's lift thrusters and outdated radar system will affect our\n...\n...\nEFFICACY.",
 	"The Vastitas Fracturae will spread until there is\nNO MORE\nin the galaxy.",
@@ -66,3 +65,8 @@ func _on_message_Timer_timeout():
 		display = ""
 		current_char = 0
 		$Letter_Timer.start()
+
+
+
+func _on_Skip_pressed():
+	get_tree().change_scene("res://menu_SCREEN.tscn")
