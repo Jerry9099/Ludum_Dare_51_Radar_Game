@@ -60,6 +60,7 @@ func _on_Letter_Timer_timeout():
 func _on_message_Timer_timeout():
 	if (current_message == len(messages) - 1):
 		stop_dialogue()
+		get_tree().change_scene("res://menu_SCREEN.tscn")
 	else: 
 		current_message += 1
 		display = ""
