@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=2]
+[gd_scene load_steps=38 format=2]
 
 [ext_resource path="res://Camera/raycast.gd" type="Script" id=1]
 [ext_resource path="res://Camera/Camera Holder.gd" type="Script" id=2]
@@ -22,6 +22,7 @@
 [ext_resource path="res://World/RandomPitch.gd" type="Script" id=20]
 [ext_resource path="res://Timer/TimerLogic.gd" type="Script" id=21]
 [ext_resource path="res://Dialogue/Godot-Fontpack-d244bf6170b399a6d4d26a0d906058ddf2dafdf1/Godot-Fontpack-d244bf6170b399a6d4d26a0d906058ddf2dafdf1/fonts/xolonium/xolonium-fonts-4.1/ttf/Xolonium-Regular.ttf" type="DynamicFontData" id=22]
+[ext_resource path="res://assets_2D/Delux_Tetanus.png" type="Texture" id=23]
 
 [sub_resource type="Environment" id=1]
 background_mode = 1
@@ -85,7 +86,11 @@ tracks/1/keys = {
 "values": [ 1.0 ]
 }
 
+[sub_resource type="SpatialMaterial" id=18]
+albedo_texture = ExtResource( 23 )
+
 [sub_resource type="QuadMesh" id=3]
+material = SubResource( 18 )
 
 [sub_resource type="ViewportTexture" id=5]
 flags = 6
