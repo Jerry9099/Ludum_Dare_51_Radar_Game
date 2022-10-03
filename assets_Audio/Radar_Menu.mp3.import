@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Radar_Menu.mp3-527a03e32de56b91ae793b0f1540af10.mp3str"
+
+[deps]
+
+source_file="res://assets_Audio/Radar_Menu.mp3"
+dest_files=[ "res://.import/Radar_Menu.mp3-527a03e32de56b91ae793b0f1540af10.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

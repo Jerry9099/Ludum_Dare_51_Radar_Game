@@ -1,7 +1,10 @@
 extends Label
 
 var score = 0
-var health = 3
+var health = 5
+
+func _ready():
+	text = "Score: %s" % score + "\nHP: %s" % health
 
 func _on_ScoreTimer_timeout():
 	if health != 0:
