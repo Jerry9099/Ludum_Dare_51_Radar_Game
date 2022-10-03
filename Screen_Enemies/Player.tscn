@@ -32,7 +32,9 @@ shape = SubResource( 3 )
 [node name="Pivot" type="Spatial" parent="."]
 
 [node name="Sprite3D" type="Sprite3D" parent="Pivot"]
+
 transform = Transform( 0.75, 0, 0, 0, -3.27835e-08, 1, 0, -0.75, -4.37114e-08, 0, 1, 0 )
+
 texture = ExtResource( 1 )
 
 [connection signal="body_entered" from="MissileDetector" to="." method="_on_MissileDetector_body_entered"]

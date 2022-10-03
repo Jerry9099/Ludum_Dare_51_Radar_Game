@@ -1,10 +1,12 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Camera/raycast.gd" type="Script" id=1]
 [ext_resource path="res://Camera/Camera Holder.gd" type="Script" id=2]
-[ext_resource path="res://assets_3D/RadarMonitorsNewAnglelarge_2.glb" type="PackedScene" id=3]
+[ext_resource path="res://World/PAUSE_SCREEN.tscn" type="PackedScene" id=4]
 [ext_resource path="res://assets_3D/pixil-frame-0.png" type="Texture" id=5]
 [ext_resource path="res://assets_3D/pixil-frame-0 (1).png" type="Texture" id=6]
+[ext_resource path="res://World/Player.gd" type="Script" id=7]
+[ext_resource path="res://assets_3D/McWORK/McWork.glb" type="PackedScene" id=8]
 
 [sub_resource type="Environment" id=1]
 background_mode = 1
@@ -12,14 +14,14 @@ fog_enabled = true
 fog_color = Color( 0, 0, 0, 1 )
 fog_sun_color = Color( 0, 0, 0, 1 )
 fog_sun_amount = 1.0
+glow_enabled = true
 
 [sub_resource type="QuadMesh" id=3]
-
-[sub_resource type="Environment" id=4]
 
 [node name="world" type="Spatial"]
 
 [node name="Player" type="Node" parent="."]
+script = ExtResource( 7 )
 
 [node name="Camera Holder" type="Spatial" parent="Player"]
 script = ExtResource( 2 )
@@ -59,6 +61,8 @@ spot_range = 6.678
 spot_attenuation = 1.07177
 spot_angle_attenuation = 0.0220971
 
+[node name="PAUSE_MENU" parent="Player" instance=ExtResource( 4 )]
+
 [node name="Environment" type="Node" parent="."]
 
 [node name="Display Console" type="Node" parent="Environment"]
@@ -76,20 +80,4 @@ spot_range = 66.952
 spot_angle = 26.83
 spot_angle_attenuation = 0.101531
 
-[node name="RadarMonitorsNewAnglelarge_2" parent="Environment" instance=ExtResource( 3 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0 )
-
-[node name="ViewportContainer" type="ViewportContainer" parent="."]
-margin_right = 100.0
-margin_bottom = 100.0
-
-[node name="Viewport" type="Viewport" parent="ViewportContainer"]
-size = Vector2( 100, 100 )
-size_override_stretch = true
-handle_input_locally = false
-disable_3d = true
-render_target_update_mode = 3
-
-[node name="Camera" type="Camera" parent="ViewportContainer/Viewport"]
-transform = Transform( 1, 0, 0, 0, 0.881089, -0.472951, 0, 0.472951, 0.881089, 0, 4.42981, 0 )
-environment = SubResource( 4 )
+[node name="McWork" parent="Environment" instance=ExtResource( 8 )]
