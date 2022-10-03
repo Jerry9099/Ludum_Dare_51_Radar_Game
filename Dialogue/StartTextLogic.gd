@@ -53,3 +53,7 @@ func _on_message_Timer_timeout():
 		display = ""
 		current_char = 0
 		$Letter_Timer.start()
+
+
+func _on_Button_pressed():
+	get_tree().change_scene("res://World/world.tscn")
