@@ -22,5 +22,3 @@ func _on_MissileTimer_timeout():
 	
 	add_child(missile)
 
-func _on_Player_hit():
-	$MissileTimer.stop()

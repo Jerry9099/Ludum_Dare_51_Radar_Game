@@ -8,15 +8,14 @@ export var DECELERATION = 1
 
 export var limit_size_square = 30
 
+export var HP = 3
+
 var top_limit = limit_size_square
 var bottom_limit = -limit_size_square
 var right_limit = limit_size_square
 var left_limit = -limit_size_square
 
-
 var velocity = Vector3.ZERO
-
-var HP
 
 func _ready():
 	self.transform.origin.y = 0
@@ -56,6 +55,7 @@ func die():
 	hide()
 	
 func _on_MissileDetector_body_entered(_body):
+	emit_signal("hit")
 	HP -= 1
 	if HP==0:
 		die()
