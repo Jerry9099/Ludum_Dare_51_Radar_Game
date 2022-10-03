@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=2]
+[gd_scene load_steps=26 format=2]
 
 [ext_resource path="res://Camera/raycast.gd" type="Script" id=1]
 [ext_resource path="res://Camera/Camera Holder.gd" type="Script" id=2]
@@ -12,6 +12,9 @@
 [ext_resource path="res://World/world.gd" type="Script" id=10]
 [ext_resource path="res://assets_3D/McShare - Monitor Meshes/Michal.obj" type="ArrayMesh" id=11]
 [ext_resource path="res://assets_3D/McShare - Monitor Meshes/McWorkMcMap.obj" type="ArrayMesh" id=12]
+[ext_resource path="res://assets_Audio/10 Ping.wav" type="AudioStream" id=13]
+[ext_resource path="res://assets_Audio/Movement_Rumblings.mp3" type="AudioStream" id=14]
+[ext_resource path="res://assets_Audio/Ambient Humm.wav" type="AudioStream" id=15]
 
 [sub_resource type="Environment" id=1]
 background_mode = 1
@@ -85,7 +88,7 @@ script = ExtResource( 7 )
 script = ExtResource( 2 )
 
 [node name="Camera" type="Camera" parent="Player/CameraHolder"]
-transform = Transform( 1, 0, 0, 0, 0.990476, 0.137687, 0, -0.137687, 0.990476, 0.148493, 2.24626, 4.29115 )
+transform = Transform( 1, 0, 0, 0, 0.990476, 0.137687, 0, -0.137687, 0.990476, 0.148493, 2.73332, 2.39359 )
 environment = SubResource( 1 )
 script = ExtResource( 1 )
 
@@ -115,6 +118,7 @@ expand = true
 stretch_mode = 5
 
 [node name="SpotLight" type="SpotLight" parent="Player/CameraHolder/Camera"]
+transform = Transform( 1, 0, 0, 0, 1, -1.49012e-08, 0, 1.49012e-08, 1, 0, 0, 0 )
 spot_range = 6.678
 spot_attenuation = 1.07177
 spot_angle_attenuation = 0.0220971
@@ -160,6 +164,18 @@ material_override = SubResource( 14 )
 mesh = ExtResource( 12 )
 skin = SubResource( 12 )
 
+[node name="Label3D" type="Label3D" parent="Environment/McWork"]
+transform = Transform( 1, 0, 0, 0, 0.442743, 0.896649, 0, -0.896649, 0.442743, 1.128, -0.073126, 1.39099 )
+shaded = true
+alpha_cut = 1
+alpha_scissor_threshold = 0.38
+modulate = Color( 0.6, 0, 0, 1 )
+outline_modulate = Color( 1, 1, 1, 1 )
+text = "PROPULSION:
+W
+A       D
+S"
+
 [node name="Monitors_Viewport_Axis" type="Spatial" parent="."]
 
 [node name="RadarScreenViewport" type="ViewportContainer" parent="Monitors_Viewport_Axis"]
@@ -202,3 +218,34 @@ visible = false
 
 [node name="RadarMain" parent="." instance=ExtResource( 9 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -30, 0 )
+
+[node name="Audio" type="Node" parent="."]
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="Audio"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.555288, 0.974455, -1.53811 )
+stream = ExtResource( 13 )
+autoplay = true
+
+[node name="AudioStreamPlayer3D2" type="AudioStreamPlayer3D" parent="Audio"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5.74028, 6.46481, 0 )
+stream = ExtResource( 14 )
+autoplay = true
+
+[node name="AudioStreamPlayer3D3" type="AudioStreamPlayer3D" parent="Audio"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5.49962, 6.46481, 0 )
+stream = ExtResource( 14 )
+autoplay = true
+
+[node name="AudioStreamPlayer3D4" type="AudioStreamPlayer3D" parent="Audio"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 15.8194, 18.9967, 10.2574 )
+stream = ExtResource( 15 )
+unit_db = -10.0
+max_db = 2.0
+autoplay = true
+
+[node name="AudioStreamPlayer3D5" type="AudioStreamPlayer3D" parent="Audio"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -14.7677, 18.9967, 10.2574 )
+stream = ExtResource( 15 )
+unit_db = -10.0
+max_db = 2.0
+autoplay = true
