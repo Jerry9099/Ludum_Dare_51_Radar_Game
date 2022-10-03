@@ -1,5 +1,6 @@
 extends Label
 
+
 var score = 0
 var health = 5
 

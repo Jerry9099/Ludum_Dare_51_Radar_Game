@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=2]
+[gd_scene load_steps=37 format=2]
 
 [ext_resource path="res://Camera/raycast.gd" type="Script" id=1]
 [ext_resource path="res://Camera/Camera Holder.gd" type="Script" id=2]
@@ -20,6 +20,9 @@
 [ext_resource path="res://assets_3D/McShare - Monitor Meshes/McWorkMcText.obj" type="ArrayMesh" id=18]
 [ext_resource path="res://assets_3D/McShare - Monitor Meshes/McWorkMcHealth.obj" type="ArrayMesh" id=19]
 [ext_resource path="res://World/RandomPitch.gd" type="Script" id=20]
+[ext_resource path="res://Timer/TimerLogic.gd" type="Script" id=21]
+[ext_resource path="res://Dialogue/Godot-Fontpack-d244bf6170b399a6d4d26a0d906058ddf2dafdf1/Godot-Fontpack-d244bf6170b399a6d4d26a0d906058ddf2dafdf1/fonts/xolonium/xolonium-fonts-4.1/ttf/Xolonium-Regular.ttf" type="DynamicFontData" id=22]
+[ext_resource path="res://Screen_Enemies/ScoreLabel.gd" type="Script" id=23]
 
 [sub_resource type="Environment" id=1]
 background_mode = 1
@@ -138,6 +141,9 @@ uv1_triplanar_sharpness = 24.09
 [sub_resource type="Skin" id=12]
 resource_local_to_scene = true
 
+[sub_resource type="DynamicFont" id=17]
+font_data = ExtResource( 22 )
+
 [node name="world" type="Spatial"]
 script = ExtResource( 10 )
 
@@ -233,13 +239,13 @@ mesh = ExtResource( 12 )
 skin = SubResource( 12 )
 
 [node name="Michal3" type="MeshInstance" parent="Environment/McWork"]
-transform = Transform( -0.716348, 0.217058, 0.663123, 0.169016, -0.868098, 0.466733, 0.676964, 0.446421, 0.585174, -6.05115, 3.78602, 1.52002 )
+transform = Transform( -0.716348, 0.217058, 0.663123, 0.169016, -0.868098, 0.466733, 0.676964, 0.446421, 0.585174, -6.07549, 3.78602, -9.21045 )
 material_override = SubResource( 14 )
 mesh = ExtResource( 18 )
 skin = SubResource( 12 )
 
 [node name="Michal4" type="MeshInstance" parent="Environment/McWork"]
-transform = Transform( -0.472223, -0.140896, -0.870146, -0.154105, -0.958745, 0.238873, -0.867904, 0.246895, 0.431029, 4.06055, 3.68866, 1.90408 )
+transform = Transform( -0.472223, -0.140896, -0.870146, -0.148755, -0.960248, 0.236213, -0.868837, 0.240984, 0.432493, 4.06055, 3.68866, -8.82639 )
 material_override = SubResource( 14 )
 mesh = ExtResource( 19 )
 skin = SubResource( 12 )
@@ -255,6 +261,24 @@ text = "PROPULSION:
 W
 A       D
 S"
+
+[node name="TIMER" type="Label3D" parent="Environment/McWork"]
+transform = Transform( 0.0185305, 0.000773337, 0.00748491, -0.000717051, 0.019985, -0.000289635, -0.00749051, 0, 0.0185443, -3.52684, 1.57752, -0.533009 )
+pixel_size = 1.0
+alpha_cut = 1
+text = "TEST"
+font = SubResource( 17 )
+script = ExtResource( 21 )
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="Environment/McWork/TIMER"]
+transform = Transform( 46.3261, -1.79263, -18.7263, 1.93334, 49.9626, 1.13687e-07, 18.7123, -0.724086, 46.3608, 156.374, -24.3857, 12.3899 )
+stream = ExtResource( 13 )
+
+[node name="ScoreLabel" type="Label" parent="Environment/McWork"]
+visible = false
+text = "Score: 0
+HP: sample"
+script = ExtResource( 23 )
 
 [node name="Monitors_Viewport_Axis" type="Spatial" parent="."]
 
@@ -302,11 +326,6 @@ visible = false
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -30, 0 )
 
 [node name="Audio" type="Node" parent="."]
-
-[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="Audio"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.555288, 0.974455, -1.53811 )
-stream = ExtResource( 13 )
-autoplay = true
 
 [node name="AudioStreamPlayer3D2" type="AudioStreamPlayer3D" parent="Audio"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5.74028, 6.46481, 0 )
