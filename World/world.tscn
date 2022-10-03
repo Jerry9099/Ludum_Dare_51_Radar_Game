@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=2]
+[gd_scene load_steps=30 format=2]
 
 [ext_resource path="res://Camera/raycast.gd" type="Script" id=1]
 [ext_resource path="res://Camera/Camera Holder.gd" type="Script" id=2]
@@ -17,6 +17,8 @@
 [ext_resource path="res://assets_Audio/Ambient Humm.wav" type="AudioStream" id=15]
 [ext_resource path="res://Camera/Screenshake.tscn" type="PackedScene" id=16]
 [ext_resource path="res://assets_Audio/Atomic_B-BlackCow-8470_hifi.mp3" type="AudioStream" id=17]
+[ext_resource path="res://assets_3D/McShare - Monitor Meshes/McWorkMcText.obj" type="ArrayMesh" id=18]
+[ext_resource path="res://assets_3D/McShare - Monitor Meshes/McWorkMcHealth.obj" type="ArrayMesh" id=19]
 
 [sub_resource type="Environment" id=1]
 background_mode = 1
@@ -168,6 +170,18 @@ skin = SubResource( 8 )
 transform = Transform( -1, -1.5206e-07, 1.50992e-07, 1.50992e-07, -0.999975, -0.00705101, 1.5206e-07, -0.00705101, 0.999975, -0.0519472, 6.11601, 0.0398026 )
 material_override = SubResource( 14 )
 mesh = ExtResource( 12 )
+skin = SubResource( 12 )
+
+[node name="Michal3" type="MeshInstance" parent="Environment/McWork"]
+transform = Transform( -0.716348, 0.217058, 0.663123, 0.169016, -0.868098, 0.466733, 0.676964, 0.446421, 0.585174, -6.05115, 3.78602, 1.52002 )
+material_override = SubResource( 14 )
+mesh = ExtResource( 18 )
+skin = SubResource( 12 )
+
+[node name="Michal4" type="MeshInstance" parent="Environment/McWork"]
+transform = Transform( -0.472223, -0.140896, -0.870146, -0.154105, -0.958745, 0.238873, -0.867904, 0.246895, 0.431029, 4.06055, 3.68866, 1.90408 )
+material_override = SubResource( 14 )
+mesh = ExtResource( 19 )
 skin = SubResource( 12 )
 
 [node name="Label3D" type="Label3D" parent="Environment/McWork"]
