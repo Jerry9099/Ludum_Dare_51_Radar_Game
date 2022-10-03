@@ -20,3 +20,4 @@ func _process(delta):
 
 func _on_Player_dead():
 	get_tree().change_scene("res://Dialogue/endDialogue.tscn")
+	#play dead sounds, etc

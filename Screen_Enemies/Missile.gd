@@ -24,7 +24,7 @@ func _physics_process(_delta):
 	acceleration = seek()
 	velocity += acceleration * _delta
 	velocity = velocity.normalized() * min(velocity.length(), max_speed)
-	look_at_from_position(self.transform.origin, self.transform.origin + velocity, Vector3.UP)
+	#look_at_from_position(self.transform.origin, self.transform.origin + velocity, Vector3.UP)
 	move_and_slide(velocity)
 
 # We will call this function from the Main scene.
