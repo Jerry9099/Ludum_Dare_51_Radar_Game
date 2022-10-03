@@ -28,6 +28,7 @@ albedo_color = Color( 0.513726, 0.168627, 0.168627, 1 )
 [sub_resource type="CylinderMesh" id=10]
 top_radius = 3.0
 bottom_radius = 3.0
+radial_segments = 32
 
 [sub_resource type="CylinderShape" id=11]
 radius = 3.0
@@ -45,7 +46,8 @@ font_data = ExtResource( 6 )
 [sub_resource type="Theme" id=13]
 default_font = SubResource( 12 )
 
-[node name="Main" type="Node"]
+[node name="RadarMain" type="Spatial"]
+
 script = ExtResource( 2 )
 missile_scene = ExtResource( 3 )
 
@@ -65,8 +67,6 @@ material/0 = SubResource( 9 )
 [node name="Grid Texture" parent="Ground" groups=["Radar"] instance=ExtResource( 5 )]
 transform = Transform( 8, 0, 0, 0, -3.49691e-07, 1, 0, -8, -4.37114e-08, 0, 0.746, 0 )
 
-[node name="DirectionalLight" type="DirectionalLight" parent="." groups=["Radar"]]
-transform = Transform( 1, 0, 0, 0, -0.226906, 0.973917, 0, -0.973917, -0.226906, 0, 46.7004, 0 )
 
 [node name="Border" type="StaticBody" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -43.4342, -2, -3.5799 )
@@ -89,6 +89,7 @@ shape = SubResource( 14 )
 
 [node name="Player" parent="." groups=["Radar"] instance=ExtResource( 1 )]
 transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0 )
+
 collision_mask = 6
 
 [node name="CameraPivot" type="Position3D" parent="Player" groups=["Radar"]]
@@ -97,7 +98,7 @@ transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 8.35314, 0 )
 [node name="Camera" type="Camera" parent="Player/CameraPivot" groups=["Radar"]]
 transform = Transform( 1, 0, 0, 0, -0.0358592, 0.999357, 0, -0.999357, -0.0358592, -0.0254765, 8.41235, 0.345621 )
 projection = 1
-size = 22.0
+size = 24.0
 
 [node name="ScannerCenter" parent="Player" groups=["Radar"] instance=ExtResource( 4 )]
 transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0.9, 0 )
