@@ -1,10 +1,15 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://Camera/raycast.gd" type="Script" id=1]
 [ext_resource path="res://Camera/Camera Holder.gd" type="Script" id=2]
-[ext_resource path="res://assets_3D/RadarMonitorsNewAnglelarge_2.glb" type="PackedScene" id=3]
+[ext_resource path="res://assets_3D/McShare - Monitor Meshes/McWorkMcRadar.obj" type="ArrayMesh" id=3]
+[ext_resource path="res://World/PAUSE_SCREEN.tscn" type="PackedScene" id=4]
 [ext_resource path="res://assets_3D/pixil-frame-0.png" type="Texture" id=5]
 [ext_resource path="res://assets_3D/pixil-frame-0 (1).png" type="Texture" id=6]
+[ext_resource path="res://World/Player.gd" type="Script" id=7]
+[ext_resource path="res://assets_3D/McWORK/McWork.glb" type="PackedScene" id=8]
+[ext_resource path="res://Screen_Enemies/Main.tscn" type="PackedScene" id=9]
+[ext_resource path="res://World/world.gd" type="Script" id=10]
 
 [sub_resource type="Environment" id=1]
 background_mode = 1
@@ -12,18 +17,33 @@ fog_enabled = true
 fog_color = Color( 0, 0, 0, 1 )
 fog_sun_color = Color( 0, 0, 0, 1 )
 fog_sun_amount = 1.0
+glow_enabled = true
 
 [sub_resource type="QuadMesh" id=3]
 
+
+[sub_resource type="ViewportTexture" id=5]
+viewport_path = NodePath("Monitors_Viewport_Axis/RadarScreenViewport/Viewport")
+
+[sub_resource type="SpatialMaterial" id=4]
+resource_local_to_scene = true
+albedo_texture = SubResource( 5 )
+uv1_scale = Vector3( 0.5, 1, 0.5 )
+uv1_offset = Vector3( 0.7, 1, 0.5 )
+uv1_triplanar = true
+
+
 [node name="world" type="Spatial"]
+script = ExtResource( 10 )
 
 [node name="Player" type="Node" parent="."]
+script = ExtResource( 7 )
 
 [node name="Camera Holder" type="Spatial" parent="Player"]
 script = ExtResource( 2 )
 
 [node name="Camera" type="Camera" parent="Player/Camera Holder"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.148493, 2.33106, 5.19737 )
+transform = Transform( 1, 0, 0, 0, 0.990476, 0.137687, 0, -0.137687, 0.990476, 0.148493, 2.24626, 4.29115 )
 environment = SubResource( 1 )
 script = ExtResource( 1 )
 
@@ -57,11 +77,13 @@ spot_range = 6.678
 spot_attenuation = 1.07177
 spot_angle_attenuation = 0.0220971
 
+[node name="PAUSE_MENU" parent="Player" instance=ExtResource( 4 )]
+
 [node name="Environment" type="Node" parent="."]
 
 [node name="Display Console" type="Node" parent="Environment"]
 
-[node name="MeshInstance" type="MeshInstance" parent="Environment"]
+[node name="FloorMesh" type="MeshInstance" parent="Environment"]
 transform = Transform( 100, 0, 0, 0, -4.37114e-06, 100, 0, -100, -4.37114e-06, 0, -3.51202, 0 )
 mesh = SubResource( 3 )
 skeleton = NodePath("")
@@ -74,19 +96,36 @@ spot_range = 66.952
 spot_angle = 26.83
 spot_angle_attenuation = 0.101531
 
-[node name="RadarMonitorsNewAnglelarge_2" parent="Environment" instance=ExtResource( 3 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0 )
+[node name="McWork" parent="Environment" instance=ExtResource( 8 )]
 
-[node name="ViewportContainer" type="ViewportContainer" parent="."]
-margin_right = 100.0
-margin_bottom = 100.0
+[node name="RadarScreenMesh" type="MeshInstance" parent="Environment/McWork"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.026051, 0.451407, 0.113084 )
+material_override = SubResource( 4 )
+cast_shadow = 0
+mesh = ExtResource( 3 )
 
-[node name="Viewport" type="Viewport" parent="ViewportContainer"]
-size = Vector2( 100, 100 )
-size_override_stretch = true
+[node name="Monitors_Viewport_Axis" type="Spatial" parent="."]
+
+[node name="RadarScreenViewport" type="ViewportContainer" parent="Monitors_Viewport_Axis"]
+margin_left = -925.0
+margin_top = -805.0
+margin_right = -425.0
+margin_bottom = -305.0
+
+[node name="Viewport" type="Viewport" parent="Monitors_Viewport_Axis/RadarScreenViewport"]
+size = Vector2( 500, 500 )
 handle_input_locally = false
-disable_3d = true
 render_target_update_mode = 3
 
 [node name="Camera" type="Camera" parent="ViewportContainer/Viewport"]
 transform = Transform( 1, 0, 0, 0, 0.881089, -0.472951, 0, 0.472951, 0.881089, 0, 4.42981, 0 )
+
+[node name="Camera" type="Camera" parent="Monitors_Viewport_Axis/RadarScreenViewport/Viewport"]
+transform = Transform( -1, 8.74228e-08, 3.82137e-15, 0, -4.37114e-08, 1, 8.74228e-08, 1, 4.37114e-08, 0, -8, 0 )
+projection = 1
+fov = 98.6
+size = 20.0
+
+[node name="RadarMain" parent="." instance=ExtResource( 9 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -30, 0 )
+

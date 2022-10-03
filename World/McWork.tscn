@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://assets_3D/McWORK/McWork.glb" type="PackedScene" id=1]
+
+[node name="McWork" instance=ExtResource( 1 )]

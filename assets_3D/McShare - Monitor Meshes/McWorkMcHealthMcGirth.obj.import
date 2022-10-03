@@ -1,0 +1,20 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/McWorkMcHealthMcGirth.obj-b6c0d3d8340293432005746d438c9309.mesh"
+
+[deps]
+
+files=[ "res://.import/McWorkMcHealthMcGirth.obj-b6c0d3d8340293432005746d438c9309.mesh" ]
+
+source_file="res://assets_3D/McShare - Monitor Meshes/McWorkMcHealthMcGirth.obj"
+dest_files=[ "res://.import/McWorkMcHealthMcGirth.obj-b6c0d3d8340293432005746d438c9309.mesh", "res://.import/McWorkMcHealthMcGirth.obj-b6c0d3d8340293432005746d438c9309.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+octahedral_compression=true
+optimize_mesh_flags=4286
