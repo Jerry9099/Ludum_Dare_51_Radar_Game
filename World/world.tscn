@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://Camera/raycast.gd" type="Script" id=1]
 [ext_resource path="res://Camera/Camera Holder.gd" type="Script" id=2]
@@ -17,6 +17,17 @@ fog_sun_amount = 1.0
 glow_enabled = true
 
 [sub_resource type="QuadMesh" id=3]
+
+[sub_resource type="ViewportTexture" id=6]
+viewport_path = NodePath("Viewport_Axis/ViewportContainer/Viewport")
+
+[sub_resource type="SpatialMaterial" id=5]
+resource_local_to_scene = true
+flags_unshaded = true
+albedo_texture = SubResource( 6 )
+
+[sub_resource type="QuadMesh" id=4]
+size = Vector2( 2, 2 )
 
 [node name="world" type="Spatial"]
 
@@ -81,3 +92,22 @@ spot_angle = 26.83
 spot_angle_attenuation = 0.101531
 
 [node name="McWork" parent="Environment" instance=ExtResource( 8 )]
+
+[node name="TopScreen" type="MeshInstance" parent="Environment/McWork"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.384, -1.04647 )
+material_override = SubResource( 5 )
+mesh = SubResource( 4 )
+
+[node name="Viewport_Axis" type="Spatial" parent="."]
+
+[node name="ViewportContainer" type="ViewportContainer" parent="Viewport_Axis"]
+margin_right = 100.0
+margin_bottom = 100.0
+
+[node name="Viewport" type="Viewport" parent="Viewport_Axis/ViewportContainer"]
+size = Vector2( 100, 100 )
+handle_input_locally = false
+render_target_update_mode = 3
+
+[node name="Camera" type="Camera" parent="Viewport_Axis/ViewportContainer/Viewport"]
+transform = Transform( 1, 0, 0, 0, 0.999923, -0.012409, 0, 0.012409, 0.999923, -0.389107, 3.16731, 2.5 )
