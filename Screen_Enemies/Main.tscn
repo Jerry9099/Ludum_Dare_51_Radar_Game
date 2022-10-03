@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=2]
+[gd_scene load_steps=21 format=2]
 
 [ext_resource path="res://Screen_Enemies/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Screen_Enemies/Main.gd" type="Script" id=2]
@@ -8,6 +8,7 @@
 [ext_resource path="res://Screen_Enemies/fonts/Montserrat-Medium.ttf" type="DynamicFontData" id=6]
 [ext_resource path="res://Screen_Enemies/ScoreLabel.gd" type="Script" id=7]
 [ext_resource path="res://Dialogue/Godot-Fontpack-d244bf6170b399a6d4d26a0d906058ddf2dafdf1/Godot-Fontpack-d244bf6170b399a6d4d26a0d906058ddf2dafdf1/fonts/xolonium/xolonium-fonts-4.1/ttf/Xolonium-Regular.ttf" type="DynamicFontData" id=8]
+[ext_resource path="res://assets_3D/TerrainMaterial.tres" type="Material" id=9]
 
 [sub_resource type="BoxShape" id=8]
 extents = Vector3( 50, 1, 50 )
@@ -22,13 +23,6 @@ albedo_color = Color( 0.00784314, 0, 0.054902, 1 )
 
 [sub_resource type="SpatialMaterial" id=4]
 albedo_color = Color( 0.513726, 0.168627, 0.168627, 1 )
-
-[sub_resource type="CylinderMesh" id=10]
-top_radius = 3.0
-bottom_radius = 3.0
-
-[sub_resource type="CylinderShape" id=11]
-radius = 3.0
 
 [sub_resource type="Curve3D" id=5]
 _data = {
@@ -45,6 +39,13 @@ default_font = SubResource( 14 )
 
 [sub_resource type="DynamicFont" id=15]
 font_data = ExtResource( 8 )
+
+[sub_resource type="CylinderMesh" id=10]
+top_radius = 3.0
+bottom_radius = 3.0
+
+[sub_resource type="CylinderShape" id=11]
+radius = 3.0
 
 [node name="RadarMain" type="Spatial"]
 script = ExtResource( 2 )
@@ -113,114 +114,6 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 18.0136, 0, 18.2414 )
 mesh = SubResource( 3 )
 material/0 = SubResource( 4 )
 
-[node name="Terrain" type="StaticBody" parent="." groups=["Radar", "Terrain"]]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5.53908, -2, -4.69185 )
-visible = false
-
-[node name="MeshInstance" type="MeshInstance" parent="Terrain" groups=["Radar", "Terrain"]]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 27.7643, 1.44217, -33.4493 )
-mesh = SubResource( 10 )
-
-[node name="CollisionShape" type="CollisionShape" parent="Terrain" groups=["Radar", "Terrain"]]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 27.7571, 1.43738, -33.4464 )
-shape = SubResource( 11 )
-
-[node name="Terrain2" type="StaticBody" parent="." groups=["Radar", "Terrain"]]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -15.2906, -2, 8.92027 )
-visible = false
-
-[node name="MeshInstance" type="MeshInstance" parent="Terrain2" groups=["Radar", "Terrain"]]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 27.7643, 1.44217, -33.4493 )
-mesh = SubResource( 10 )
-
-[node name="CollisionShape" type="CollisionShape" parent="Terrain2" groups=["Radar", "Terrain"]]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 27.7571, 1.43738, -33.4464 )
-shape = SubResource( 11 )
-
-[node name="Terrain3" type="StaticBody" parent="." groups=["Radar", "Terrain"]]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -43.4342, -2, -3.5799 )
-visible = false
-
-[node name="MeshInstance" type="MeshInstance" parent="Terrain3" groups=["Radar", "Terrain"]]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 27.7643, 1.44217, -33.4493 )
-mesh = SubResource( 10 )
-
-[node name="CollisionShape" type="CollisionShape" parent="Terrain3" groups=["Radar", "Terrain"]]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 27.7571, 1.43738, -33.4464 )
-shape = SubResource( 11 )
-
-[node name="Terrain4" type="StaticBody" parent="." groups=["Radar", "Terrain"]]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -54.9478, -2, 13.5129 )
-visible = false
-
-[node name="MeshInstance" type="MeshInstance" parent="Terrain4" groups=["Radar", "Terrain"]]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 27.7643, 1.44217, -33.4493 )
-mesh = SubResource( 10 )
-
-[node name="CollisionShape" type="CollisionShape" parent="Terrain4" groups=["Radar", "Terrain"]]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 27.7571, 1.43738, -33.4464 )
-shape = SubResource( 11 )
-
-[node name="Terrain5" type="StaticBody" parent="." groups=["Radar", "Terrain"]]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -34.8689, -2, 57.7579 )
-visible = false
-
-[node name="MeshInstance" type="MeshInstance" parent="Terrain5" groups=["Radar", "Terrain"]]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 27.7643, 1.44217, -33.4493 )
-mesh = SubResource( 10 )
-
-[node name="CollisionShape" type="CollisionShape" parent="Terrain5" groups=["Radar", "Terrain"]]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 27.7571, 1.43738, -33.4464 )
-shape = SubResource( 11 )
-
-[node name="Terrain6" type="StaticBody" parent="." groups=["Radar", "Terrain"]]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -22.944, -2, 51.9328 )
-visible = false
-
-[node name="MeshInstance" type="MeshInstance" parent="Terrain6" groups=["Radar", "Terrain"]]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 27.7643, 1.44217, -33.4493 )
-mesh = SubResource( 10 )
-
-[node name="CollisionShape" type="CollisionShape" parent="Terrain6" groups=["Radar", "Terrain"]]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 27.7571, 1.43738, -33.4464 )
-shape = SubResource( 11 )
-
-[node name="Terrain7" type="StaticBody" parent="." groups=["Radar", "Terrain"]]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -13.3296, -2, 60.1236 )
-visible = false
-
-[node name="MeshInstance" type="MeshInstance" parent="Terrain7" groups=["Radar", "Terrain"]]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 27.7643, 1.44217, -33.4493 )
-mesh = SubResource( 10 )
-
-[node name="CollisionShape" type="CollisionShape" parent="Terrain7" groups=["Radar", "Terrain"]]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 27.7571, 1.43738, -33.4464 )
-shape = SubResource( 11 )
-
-[node name="Terrain8" type="StaticBody" parent="." groups=["Radar", "Terrain"]]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.341781, -2, 46.7682 )
-visible = false
-
-[node name="MeshInstance" type="MeshInstance" parent="Terrain8" groups=["Radar", "Terrain"]]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 27.7643, 1.44217, -33.4493 )
-mesh = SubResource( 10 )
-
-[node name="CollisionShape" type="CollisionShape" parent="Terrain8" groups=["Radar", "Terrain"]]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 27.7571, 1.43738, -33.4464 )
-shape = SubResource( 11 )
-
-[node name="Terrain9" type="StaticBody" parent="." groups=["Radar", "Terrain"]]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4.7697, -2, 61.5214 )
-visible = false
-
-[node name="MeshInstance" type="MeshInstance" parent="Terrain9" groups=["Radar", "Terrain"]]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 27.7643, 1.44217, -33.4493 )
-mesh = SubResource( 10 )
-
-[node name="CollisionShape" type="CollisionShape" parent="Terrain9" groups=["Radar", "Terrain"]]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 27.7571, 1.43738, -33.4464 )
-shape = SubResource( 11 )
-
 [node name="Ground2" type="StaticBody" parent="." groups=["Map"]]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 91.2517, 0 )
 collision_layer = 4
@@ -268,102 +161,226 @@ script = ExtResource( 7 )
 wait_time = 10.0
 autostart = true
 
-[node name="Terrain10" type="StaticBody" parent="." groups=["Map", "Terrain"]]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5.53908, 91.2517, -4.69185 )
+[node name="TerrainMaster" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 102.111, 0 )
 
-[node name="MeshInstance" type="MeshInstance" parent="Terrain10" groups=["Map", "Terrain"]]
+[node name="Terrain10" type="StaticBody" parent="TerrainMaster" groups=["Map", "Terrain"]]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -40.9968, -10.8596, 38.8231 )
+
+[node name="MeshInstance" type="MeshInstance" parent="TerrainMaster/Terrain10" groups=["Map", "Terrain"]]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 27.7643, 1.44217, -33.4493 )
 mesh = SubResource( 10 )
+material/0 = ExtResource( 9 )
 
-[node name="CollisionShape" type="CollisionShape" parent="Terrain10" groups=["Map", "Terrain"]]
+[node name="CollisionShape" type="CollisionShape" parent="TerrainMaster/Terrain10" groups=["Map", "Terrain"]]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 27.7571, 1.43738, -33.4464 )
 shape = SubResource( 11 )
 
-[node name="Terrain11" type="StaticBody" parent="." groups=["Map", "Terrain"]]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -15.2906, 91.2517, 8.92027 )
+[node name="Terrain11" type="StaticBody" parent="TerrainMaster" groups=["Map", "Terrain"]]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -15.2906, -10.8596, 8.92027 )
 
-[node name="MeshInstance" type="MeshInstance" parent="Terrain11" groups=["Map", "Terrain"]]
+[node name="MeshInstance" type="MeshInstance" parent="TerrainMaster/Terrain11" groups=["Map", "Terrain"]]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 27.7643, 1.44217, -33.4493 )
 mesh = SubResource( 10 )
+material/0 = ExtResource( 9 )
 
-[node name="CollisionShape" type="CollisionShape" parent="Terrain11" groups=["Map", "Terrain"]]
+[node name="CollisionShape" type="CollisionShape" parent="TerrainMaster/Terrain11" groups=["Map", "Terrain"]]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 27.7571, 1.43738, -33.4464 )
 shape = SubResource( 11 )
 
-[node name="Terrain12" type="StaticBody" parent="." groups=["Map", "Terrain"]]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -43.4342, 91.2517, -3.5799 )
+[node name="Terrain12" type="StaticBody" parent="TerrainMaster" groups=["Map", "Terrain"]]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -43.4342, -10.8596, -3.5799 )
 
-[node name="MeshInstance" type="MeshInstance" parent="Terrain12" groups=["Map", "Terrain"]]
+[node name="MeshInstance" type="MeshInstance" parent="TerrainMaster/Terrain12" groups=["Map", "Terrain"]]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 27.7643, 1.44217, -33.4493 )
 mesh = SubResource( 10 )
+material/0 = ExtResource( 9 )
 
-[node name="CollisionShape" type="CollisionShape" parent="Terrain12" groups=["Map", "Terrain"]]
+[node name="CollisionShape" type="CollisionShape" parent="TerrainMaster/Terrain12" groups=["Map", "Terrain"]]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 27.7571, 1.43738, -33.4464 )
 shape = SubResource( 11 )
 
-[node name="Terrain13" type="StaticBody" parent="." groups=["Map", "Terrain"]]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -54.9478, 91.2517, 13.5129 )
+[node name="Terrain13" type="StaticBody" parent="TerrainMaster" groups=["Map", "Terrain"]]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -54.9478, -10.8596, 13.5129 )
 
-[node name="MeshInstance" type="MeshInstance" parent="Terrain13" groups=["Map", "Terrain"]]
+[node name="MeshInstance" type="MeshInstance" parent="TerrainMaster/Terrain13" groups=["Map", "Terrain"]]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 27.7643, 1.44217, -33.4493 )
+material_override = ExtResource( 9 )
 mesh = SubResource( 10 )
 
-[node name="CollisionShape" type="CollisionShape" parent="Terrain13" groups=["Map", "Terrain"]]
+[node name="CollisionShape" type="CollisionShape" parent="TerrainMaster/Terrain13" groups=["Map", "Terrain"]]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 27.7571, 1.43738, -33.4464 )
 shape = SubResource( 11 )
 
-[node name="Terrain14" type="StaticBody" parent="." groups=["Map", "Terrain"]]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -34.8689, 91.2517, 57.7579 )
+[node name="Terrain14" type="StaticBody" parent="TerrainMaster" groups=["Map", "Terrain"]]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -46.1492, -10.8596, 57.7579 )
 
-[node name="MeshInstance" type="MeshInstance" parent="Terrain14" groups=["Map", "Terrain"]]
+[node name="MeshInstance" type="MeshInstance" parent="TerrainMaster/Terrain14" groups=["Map", "Terrain"]]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 27.7643, 1.44217, -33.4493 )
 mesh = SubResource( 10 )
+material/0 = ExtResource( 9 )
 
-[node name="CollisionShape" type="CollisionShape" parent="Terrain14" groups=["Map", "Terrain"]]
+[node name="CollisionShape" type="CollisionShape" parent="TerrainMaster/Terrain14" groups=["Map", "Terrain"]]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 27.7571, 1.43738, -33.4464 )
 shape = SubResource( 11 )
 
-[node name="Terrain15" type="StaticBody" parent="." groups=["Map", "Terrain"]]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -22.944, 91.2517, 51.9328 )
+[node name="Terrain15" type="StaticBody" parent="TerrainMaster" groups=["Map", "Terrain"]]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -22.944, -10.8596, 51.9328 )
 
-[node name="MeshInstance" type="MeshInstance" parent="Terrain15" groups=["Map", "Terrain"]]
+[node name="MeshInstance" type="MeshInstance" parent="TerrainMaster/Terrain15" groups=["Map", "Terrain"]]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 27.7643, 1.44217, -33.4493 )
 mesh = SubResource( 10 )
+material/0 = ExtResource( 9 )
 
-[node name="CollisionShape" type="CollisionShape" parent="Terrain15" groups=["Map", "Terrain"]]
+[node name="CollisionShape" type="CollisionShape" parent="TerrainMaster/Terrain15" groups=["Map", "Terrain"]]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 27.7571, 1.43738, -33.4464 )
 shape = SubResource( 11 )
 
-[node name="Terrain16" type="StaticBody" parent="." groups=["Map", "Terrain"]]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -13.3296, 91.2517, 60.1236 )
+[node name="Terrain16" type="StaticBody" parent="TerrainMaster" groups=["Map", "Terrain"]]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -13.3296, -10.8596, 60.1236 )
 
-[node name="MeshInstance" type="MeshInstance" parent="Terrain16" groups=["Map", "Terrain"]]
+[node name="MeshInstance" type="MeshInstance" parent="TerrainMaster/Terrain16" groups=["Map", "Terrain"]]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 27.7643, 1.44217, -33.4493 )
 mesh = SubResource( 10 )
+material/0 = ExtResource( 9 )
 
-[node name="CollisionShape" type="CollisionShape" parent="Terrain16" groups=["Map", "Terrain"]]
+[node name="CollisionShape" type="CollisionShape" parent="TerrainMaster/Terrain16" groups=["Map", "Terrain"]]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 27.7571, 1.43738, -33.4464 )
 shape = SubResource( 11 )
 
-[node name="Terrain17" type="StaticBody" parent="." groups=["Map", "Terrain"]]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.341781, 91.2517, 46.7682 )
+[node name="Terrain17" type="StaticBody" parent="TerrainMaster" groups=["Map", "Terrain"]]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.341781, -10.8596, 46.7682 )
 
-[node name="MeshInstance" type="MeshInstance" parent="Terrain17" groups=["Map", "Terrain"]]
+[node name="MeshInstance" type="MeshInstance" parent="TerrainMaster/Terrain17" groups=["Map", "Terrain"]]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 27.7643, 1.44217, -33.4493 )
 mesh = SubResource( 10 )
+material/0 = ExtResource( 9 )
 
-[node name="CollisionShape" type="CollisionShape" parent="Terrain17" groups=["Map", "Terrain"]]
+[node name="CollisionShape" type="CollisionShape" parent="TerrainMaster/Terrain17" groups=["Map", "Terrain"]]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 27.7571, 1.43738, -33.4464 )
 shape = SubResource( 11 )
 
-[node name="Terrain18" type="StaticBody" parent="." groups=["Map", "Terrain"]]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4.7697, 91.2517, 61.5214 )
+[node name="Terrain18" type="StaticBody" parent="TerrainMaster" groups=["Map", "Terrain"]]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4.7697, -10.8596, 61.5214 )
 
-[node name="MeshInstance" type="MeshInstance" parent="Terrain18" groups=["Map", "Terrain"]]
+[node name="MeshInstance" type="MeshInstance" parent="TerrainMaster/Terrain18" groups=["Map", "Terrain"]]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 27.7643, 1.44217, -33.4493 )
 mesh = SubResource( 10 )
+material/0 = ExtResource( 9 )
 
-[node name="CollisionShape" type="CollisionShape" parent="Terrain18" groups=["Map", "Terrain"]]
+[node name="CollisionShape" type="CollisionShape" parent="TerrainMaster/Terrain18" groups=["Map", "Terrain"]]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 27.7571, 1.43738, -33.4464 )
+shape = SubResource( 11 )
+
+[node name="TerrainMaster2" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 9.45065, 0 )
+visible = false
+
+[node name="Terrain10" type="StaticBody" parent="TerrainMaster2" groups=["Map", "Terrain"]]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -40.9968, -10.8596, 38.8231 )
+
+[node name="MeshInstance" type="MeshInstance" parent="TerrainMaster2/Terrain10" groups=["Map", "Terrain"]]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 27.7643, 1.44217, -33.4493 )
+mesh = SubResource( 10 )
+material/0 = ExtResource( 9 )
+
+[node name="CollisionShape" type="CollisionShape" parent="TerrainMaster2/Terrain10" groups=["Map", "Terrain"]]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 27.7571, 1.43738, -33.4464 )
+shape = SubResource( 11 )
+
+[node name="Terrain11" type="StaticBody" parent="TerrainMaster2" groups=["Map", "Terrain"]]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -15.2906, -10.8596, 8.92027 )
+
+[node name="MeshInstance" type="MeshInstance" parent="TerrainMaster2/Terrain11" groups=["Map", "Terrain"]]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 27.7643, 1.44217, -33.4493 )
+mesh = SubResource( 10 )
+material/0 = ExtResource( 9 )
+
+[node name="CollisionShape" type="CollisionShape" parent="TerrainMaster2/Terrain11" groups=["Map", "Terrain"]]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 27.7571, 1.43738, -33.4464 )
+shape = SubResource( 11 )
+
+[node name="Terrain12" type="StaticBody" parent="TerrainMaster2" groups=["Map", "Terrain"]]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -43.4342, -10.8596, -3.5799 )
+
+[node name="MeshInstance" type="MeshInstance" parent="TerrainMaster2/Terrain12" groups=["Map", "Terrain"]]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 27.7643, 1.44217, -33.4493 )
+mesh = SubResource( 10 )
+material/0 = ExtResource( 9 )
+
+[node name="CollisionShape" type="CollisionShape" parent="TerrainMaster2/Terrain12" groups=["Map", "Terrain"]]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 27.7571, 1.43738, -33.4464 )
+shape = SubResource( 11 )
+
+[node name="Terrain13" type="StaticBody" parent="TerrainMaster2" groups=["Map", "Terrain"]]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -54.9478, -10.8596, 13.5129 )
+
+[node name="MeshInstance" type="MeshInstance" parent="TerrainMaster2/Terrain13" groups=["Map", "Terrain"]]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 27.7643, 1.44217, -33.4493 )
+material_override = ExtResource( 9 )
+mesh = SubResource( 10 )
+
+[node name="CollisionShape" type="CollisionShape" parent="TerrainMaster2/Terrain13" groups=["Map", "Terrain"]]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 27.7571, 1.43738, -33.4464 )
+shape = SubResource( 11 )
+
+[node name="Terrain14" type="StaticBody" parent="TerrainMaster2" groups=["Map", "Terrain"]]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -46.1492, -10.8596, 57.7579 )
+
+[node name="MeshInstance" type="MeshInstance" parent="TerrainMaster2/Terrain14" groups=["Map", "Terrain"]]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 27.7643, 1.44217, -33.4493 )
+mesh = SubResource( 10 )
+material/0 = ExtResource( 9 )
+
+[node name="CollisionShape" type="CollisionShape" parent="TerrainMaster2/Terrain14" groups=["Map", "Terrain"]]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 27.7571, 1.43738, -33.4464 )
+shape = SubResource( 11 )
+
+[node name="Terrain15" type="StaticBody" parent="TerrainMaster2" groups=["Map", "Terrain"]]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -22.944, -10.8596, 51.9328 )
+
+[node name="MeshInstance" type="MeshInstance" parent="TerrainMaster2/Terrain15" groups=["Map", "Terrain"]]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 27.7643, 1.44217, -33.4493 )
+mesh = SubResource( 10 )
+material/0 = ExtResource( 9 )
+
+[node name="CollisionShape" type="CollisionShape" parent="TerrainMaster2/Terrain15" groups=["Map", "Terrain"]]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 27.7571, 1.43738, -33.4464 )
+shape = SubResource( 11 )
+
+[node name="Terrain16" type="StaticBody" parent="TerrainMaster2" groups=["Map", "Terrain"]]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -13.3296, -10.8596, 60.1236 )
+
+[node name="MeshInstance" type="MeshInstance" parent="TerrainMaster2/Terrain16" groups=["Map", "Terrain"]]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 27.7643, 1.44217, -33.4493 )
+mesh = SubResource( 10 )
+material/0 = ExtResource( 9 )
+
+[node name="CollisionShape" type="CollisionShape" parent="TerrainMaster2/Terrain16" groups=["Map", "Terrain"]]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 27.7571, 1.43738, -33.4464 )
+shape = SubResource( 11 )
+
+[node name="Terrain17" type="StaticBody" parent="TerrainMaster2" groups=["Map", "Terrain"]]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.341781, -10.8596, 46.7682 )
+
+[node name="MeshInstance" type="MeshInstance" parent="TerrainMaster2/Terrain17" groups=["Map", "Terrain"]]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 27.7643, 1.44217, -33.4493 )
+mesh = SubResource( 10 )
+material/0 = ExtResource( 9 )
+
+[node name="CollisionShape" type="CollisionShape" parent="TerrainMaster2/Terrain17" groups=["Map", "Terrain"]]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 27.7571, 1.43738, -33.4464 )
+shape = SubResource( 11 )
+
+[node name="Terrain18" type="StaticBody" parent="TerrainMaster2" groups=["Map", "Terrain"]]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4.7697, -10.8596, 61.5214 )
+
+[node name="MeshInstance" type="MeshInstance" parent="TerrainMaster2/Terrain18" groups=["Map", "Terrain"]]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 27.7643, 1.44217, -33.4493 )
+mesh = SubResource( 10 )
+material/0 = ExtResource( 9 )
+
+[node name="CollisionShape" type="CollisionShape" parent="TerrainMaster2/Terrain18" groups=["Map", "Terrain"]]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 27.7571, 1.43738, -33.4464 )
 shape = SubResource( 11 )
 
