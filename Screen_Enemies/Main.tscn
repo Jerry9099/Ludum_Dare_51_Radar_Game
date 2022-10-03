@@ -144,6 +144,7 @@ wait_time = 2.0
 autostart = true
 
 [node name="UserInterface" type="Control" parent="."]
+visible = false
 margin_right = 40.0
 margin_bottom = 40.0
 theme = SubResource( 13 )
