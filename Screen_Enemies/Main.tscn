@@ -35,12 +35,12 @@ _data = {
 "tilts": PoolRealArray( 0, 0, 0, 0, 0 )
 }
 
-[sub_resource type="DynamicFont" id=12]
+[sub_resource type="DynamicFont" id=14]
 size = 22
 font_data = ExtResource( 6 )
 
 [sub_resource type="Theme" id=13]
-default_font = SubResource( 12 )
+default_font = SubResource( 14 )
 
 [node name="RadarMain" type="Spatial"]
 script = ExtResource( 2 )
