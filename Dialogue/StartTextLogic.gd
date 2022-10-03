@@ -16,6 +16,7 @@ var display = ""
 var current_char = 0
 
 func _ready():
+	get_node("/root/CanvasLayer/Continue").hide()
 	start_dialogue()
 	
 func start_dialogue():
@@ -46,8 +47,8 @@ func _on_Letter_Timer_timeout():
 
 func _on_message_Timer_timeout():
 	if (current_message == len(messages) - 1):
-		stop_dialogue()
-		get_tree().change_scene("res://World/world.tscn")
+		get_node("/root/CanvasLayer/Continue").show()
+		get_node("/root/CanvasLayer/Skip").hide()
 	else: 
 		current_message += 1
 		display = ""
@@ -56,4 +57,8 @@ func _on_message_Timer_timeout():
 
 
 func _on_Button_pressed():
+	get_tree().change_scene("res://World/world.tscn")
+
+
+func _on_Continue_pressed():
 	get_tree().change_scene("res://World/world.tscn")

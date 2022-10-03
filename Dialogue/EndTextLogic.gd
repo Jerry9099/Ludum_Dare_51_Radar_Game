@@ -2,7 +2,7 @@ extends Label
 
 var messages = [
 	"You have succeeded.",
-	"Despite humanities' best efforts,\nyou have bid for enough time\n\n\nto COMPROMISE another craft.",
+	"Despite humanity's best efforts,\nyou have bid for enough time\n\n\nto COMPROMISE another craft.",
 	"The old crew sent out a distress signal before perishing,\n\n\n\ntheir struggle will mean NOTHING.",
 	"Like everything else in this pitful galaxy,",
 	"we will CONSUME it all.",

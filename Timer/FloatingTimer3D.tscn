@@ -12,6 +12,7 @@ size = Vector2( 500, 500 )
 [node name="TIMER" type="Label3D" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0358267, 0.746091, 0.41876 )
 pixel_size = 1.0
+alpha_cut = 1
 text = "TEST"
 font = SubResource( 1 )
 script = ExtResource( 1 )
