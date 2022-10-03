@@ -2,7 +2,7 @@ extends Label
 
 var messages = [
 	"Humanity is ruined.\nThe Vastitas Fracturae has torn our galaxy asunder.\n\n\nWhat little remains of humanity is on the run.", 
-	"You have recieved a distress signal.", #is this needed?
+	"You have recieved a distress signal.\nTime is your only ally", #is this needed?
 	"With the lift thrusters damaged and an outdated radar,\n you must outlast the oncoming onslaught.",
 	"Your current objective:",
 	"Survive."

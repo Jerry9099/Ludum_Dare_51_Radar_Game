@@ -1,12 +1,12 @@
 extends Label
 
 var messages = [
-	"You have succeeded.",
-	"Despite humanity's best efforts,\nyou have bid for enough time\n\n\nto COMPROMISE another craft.",
-	"The old crew sent out a distress signal before perishing,\n\n\n\ntheir struggle will mean NOTHING.",
-	"Little by little,/nwe will CONSUME this pitiful galaxy.",
+	"You have succeeded.\nYour ship's death was not in vain.",
+	"Despite humanity's best efforts,\nyou have bid for enough time\n\n\nto invade another ship.",
+	"The former crew sent out a distress signal before perishing,\n\n\n\ntheir struggle will mean NOTHING.",
+	"Little by little,\nwe will CONSUME this pitiful galaxy.",
 	"",
-	"However,\nthe damage to the ship's lift thrusters and outdated radar system will affect our\n...\n...\nEFFICACY.",
+	"However,\nthe damage to the ship's lift thrusters and outdated radar system will affect our\n...\n...\n...\nEFFICACY.",
 	"The Vastitas Fracturae will spread until there is\nNO MORE\nin the galaxy.",
 	"",
 	" ",

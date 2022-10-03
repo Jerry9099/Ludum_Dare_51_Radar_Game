@@ -9,7 +9,7 @@
 [ext_resource path="res://assets_Audio/ButtonHover.wav" type="AudioStream" id=7]
 [ext_resource path="res://assets_Audio/ButtonDown.wav" type="AudioStream" id=8]
 [ext_resource path="res://ButtonClickAudio.gd" type="Script" id=9]
-[ext_resource path="res://wow.jpg" type="Texture" id=10]
+[ext_resource path="res://assets_2D/wow.jpg" type="Texture" id=10]
 
 [sub_resource type="StyleBoxFlat" id=1]
 corner_radius_top_left = 10

@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/wow.jpg-9b72129a84ef5f9e949059ab2c78c53e.stex"
+path="res://.import/wow.jpg-d2d2e268cd4d7f93bc9da524859ed31d.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://wow.jpg"
-dest_files=[ "res://.import/wow.jpg-9b72129a84ef5f9e949059ab2c78c53e.stex" ]
+source_file="res://assets_2D/wow.jpg"
+dest_files=[ "res://.import/wow.jpg-d2d2e268cd4d7f93bc9da524859ed31d.stex" ]
 
 [params]
 
