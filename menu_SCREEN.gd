@@ -7,7 +7,8 @@ extends TextureRect
 onready var play_button: Button = find_node("RESUME")
 onready var quit_button: Button = find_node("QUIT")
 
-
+func _ready():
+	OS.window_fullscreen = true
 	
 #func pause():
 #	animator.play("Pause")

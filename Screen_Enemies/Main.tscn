@@ -35,12 +35,12 @@ _data = {
 "tilts": PoolRealArray( 0, 0, 0, 0, 0 )
 }
 
-[sub_resource type="DynamicFont" id=18]
+[sub_resource type="DynamicFont" id=14]
 size = 22
 font_data = ExtResource( 6 )
 
 [sub_resource type="Theme" id=13]
-default_font = SubResource( 18 )
+default_font = SubResource( 14 )
 
 [sub_resource type="CylinderMesh" id=10]
 top_radius = 3.0
