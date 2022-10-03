@@ -1,5 +1,6 @@
 extends KinematicBody
 signal hit
+signal died
 
 # How fast the player moves in meters per second.
 export var MAX_SPEED = 2
@@ -20,6 +21,9 @@ var velocity = Vector3.ZERO
 func _ready():
 	self.transform.origin.y = 0
 	self.HP = 3
+	
+	#TEMP
+	self.connect("died", self, "_on_Player_dead")
 	
 
 func _physics_process(delta):
@@ -51,7 +55,7 @@ func _physics_process(delta):
 	velocity = move_and_slide(velocity, Vector3.UP)
 
 func die():
-	emit_signal("hit")
+	emit_signal("died")
 	hide()
 	
 func _on_MissileDetector_body_entered(_body):
@@ -59,3 +63,6 @@ func _on_MissileDetector_body_entered(_body):
 	HP -= 1
 	if HP==0:
 		die()
+		
+func _on_Player_dead():
+	get_tree().change_scene("res://Dialogue/endDialogue.tscn")

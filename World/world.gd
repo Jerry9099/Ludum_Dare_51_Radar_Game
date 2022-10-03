@@ -8,7 +8,7 @@ extends Spatial
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	$Player.connect("died", self, "_on_Player_dead")
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -17,3 +17,6 @@ func _process(delta):
 	new_pos.y = $Monitors_Viewport_Axis/RadarScreenViewport/Viewport/Camera.get_translation().y
 	$Monitors_Viewport_Axis/RadarScreenViewport/Viewport/Camera.set_translation(new_pos)
 	
+
+func _on_Player_dead():
+	get_tree().change_scene("res://Dialogue/endDialogue.tscn")
