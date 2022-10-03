@@ -383,7 +383,6 @@ material/0 = ExtResource( 6 )
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 27.7571, 1.43738, -33.4464 )
 shape = SubResource( 11 )
 
-[connection signal="hit" from="Player" to="." method="_on_Player_hit"]
 [connection signal="hit" from="Player" to="UserInterface/ScoreLabel" method="_on_Player_hit"]
 [connection signal="timeout" from="MissileTimer" to="." method="_on_MissileTimer_timeout"]
 [connection signal="timeout" from="ScoreTimer" to="UserInterface/ScoreLabel" method="_on_ScoreTimer_timeout"]
