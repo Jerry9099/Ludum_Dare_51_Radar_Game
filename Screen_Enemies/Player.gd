@@ -20,7 +20,7 @@ var velocity = Vector3.ZERO
 
 func _ready():
 	self.transform.origin.y = 0
-	self.HP = 3
+	#self.HP = 3
 	
 	#TEMP
 	self.connect("died", self, "_on_Player_dead")

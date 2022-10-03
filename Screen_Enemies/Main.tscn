@@ -261,7 +261,7 @@ margin_bottom = 35.0
 custom_colors/font_color = Color( 0.0431373, 0.560784, 0.105882, 0.956863 )
 custom_fonts/font = SubResource( 15 )
 text = "Score: 0
-HP: 3"
+HP: sample"
 script = ExtResource( 7 )
 
 [node name="ScoreTimer" type="Timer" parent="."]
