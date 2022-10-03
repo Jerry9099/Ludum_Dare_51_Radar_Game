@@ -51,7 +51,7 @@ func _physics_process(delta):
 	# Assign hvel's values back to velocity, and then move.
 	velocity.x = hvel.x
 	velocity.z = hvel.z
-	$Pivot.look_at(translation + velocity.normalized(), Vector3.UP)
+	#$Pivot.look_at(translation + velocity.normalized(), Vector3.UP)
 	velocity = move_and_slide(velocity, Vector3.UP)
 
 func die():
