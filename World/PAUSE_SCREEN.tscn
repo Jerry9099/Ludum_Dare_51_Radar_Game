@@ -268,10 +268,12 @@ anims/UNPAUSE = SubResource( 16 )
 
 [node name="ButtonHoverAudio" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 3 )
+volume_db = -3.19
 script = ExtResource( 6 )
 
 [node name="ButtonClickAudio" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 7 )
+volume_db = -4.466
 pitch_scale = 4.0
 script = ExtResource( 5 )
 
