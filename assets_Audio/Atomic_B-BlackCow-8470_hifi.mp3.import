@@ -11,5 +11,5 @@ dest_files=[ "res://.import/Atomic_B-BlackCow-8470_hifi.mp3-86347263bfd10b7f43a5
 
 [params]
 
-loop=true
+loop=false
 loop_offset=0
