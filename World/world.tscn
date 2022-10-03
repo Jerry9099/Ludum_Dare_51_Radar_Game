@@ -1,5 +1,4 @@
-[gd_scene load_steps=31 format=2]
-
+[gd_scene load_steps=33 format=2]
 
 [ext_resource path="res://Camera/raycast.gd" type="Script" id=1]
 [ext_resource path="res://Camera/Camera Holder.gd" type="Script" id=2]
@@ -18,12 +17,9 @@
 [ext_resource path="res://assets_Audio/Ambient Humm.wav" type="AudioStream" id=15]
 [ext_resource path="res://Camera/Screenshake.tscn" type="PackedScene" id=16]
 [ext_resource path="res://assets_Audio/Atomic_B-BlackCow-8470_hifi.mp3" type="AudioStream" id=17]
-
-[ext_resource path="res://World/randompitch.gd" type="Script" id=18]
-
 [ext_resource path="res://assets_3D/McShare - Monitor Meshes/McWorkMcText.obj" type="ArrayMesh" id=18]
 [ext_resource path="res://assets_3D/McShare - Monitor Meshes/McWorkMcHealth.obj" type="ArrayMesh" id=19]
-
+[ext_resource path="res://World/RandomPitch.gd" type="Script" id=20]
 
 [sub_resource type="Environment" id=1]
 background_mode = 1
@@ -340,10 +336,10 @@ autoplay = true
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.24329, -12.8123 )
 stream = ExtResource( 17 )
 unit_db = 8.0
-script = ExtResource( 18 )
+script = ExtResource( 20 )
 
 [node name="MissileHitSound2" type="AudioStreamPlayer3D" parent="Audio"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.24329, 5.84824 )
 stream = ExtResource( 17 )
 unit_db = 8.0
-script = ExtResource( 18 )
+script = ExtResource( 20 )
