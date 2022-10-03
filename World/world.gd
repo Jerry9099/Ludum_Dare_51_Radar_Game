@@ -12,5 +12,8 @@ func _ready():
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
+func _process(delta):
+	var new_pos = $RadarMain/Player.get_translation()
+	new_pos.y = $Monitors_Viewport_Axis/RadarScreenViewport/Viewport/Camera.get_translation().y
+	$Monitors_Viewport_Axis/RadarScreenViewport/Viewport/Camera.set_translation(new_pos)
+	
