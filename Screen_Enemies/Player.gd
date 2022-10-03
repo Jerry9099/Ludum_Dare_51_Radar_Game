@@ -11,8 +11,8 @@ export var limit_size_square = 30
 
 export var HP = 5
 
-var top_limit = limit_size_square
-var bottom_limit = -limit_size_square
+var top_limit = -limit_size_square
+var bottom_limit = limit_size_square
 var right_limit = limit_size_square
 var left_limit = -limit_size_square
 
@@ -51,7 +51,17 @@ func _physics_process(delta):
 	# Assign hvel's values back to velocity, and then move.
 	velocity.x = hvel.x
 	velocity.z = hvel.z
-	#$Pivot.look_at(translation + velocity.normalized(), Vector3.UP)
+	if translation.x > right_limit && velocity.x > 0:
+		velocity.x = 0
+	if translation.x < left_limit && velocity.x < 0:
+		velocity.x = 0
+	if translation.z < top_limit && velocity.z < 0:
+		velocity.z = 0
+	if translation.z > bottom_limit && velocity.z > 0:
+		velocity.z = 0
+	
+	print(translation)
+	
 	velocity = move_and_slide(velocity, Vector3.UP)
 
 func die():
