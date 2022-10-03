@@ -62,9 +62,6 @@ material/0 = SubResource( 9 )
 [node name="Grid Texture" parent="Ground" groups=["Radar"] instance=ExtResource( 5 )]
 transform = Transform( 8, 0, 0, 0, -3.49691e-07, 1, 0, -8, -4.37114e-08, 0, 0.746, 0 )
 
-[node name="DirectionalLight" type="DirectionalLight" parent="." groups=["Radar"]]
-transform = Transform( 1, 0, 0, 0, -0.226906, 0.973917, 0, -0.973917, -0.226906, 0, 46.7004, 0 )
-
 [node name="Player" parent="." groups=["Radar"] instance=ExtResource( 1 )]
 transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0 )
 collision_mask = 6

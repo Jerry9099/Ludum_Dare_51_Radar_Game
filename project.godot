@@ -14,6 +14,11 @@ config/name="Radar_Game"
 run/main_scene="res://World/world.tscn"
 config/icon="res://icon.png"
 
+[global]
+
+frame=false
+buffer=false
+
 [gui]
 
 common/drop_mouse_on_gui_input_disabled=true

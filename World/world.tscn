@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Camera/raycast.gd" type="Script" id=1]
 [ext_resource path="res://Camera/Camera Holder.gd" type="Script" id=2]
@@ -14,8 +14,6 @@ fog_sun_color = Color( 0, 0, 0, 1 )
 fog_sun_amount = 1.0
 
 [sub_resource type="QuadMesh" id=3]
-
-[sub_resource type="Environment" id=4]
 
 [node name="world" type="Spatial"]
 
@@ -92,4 +90,3 @@ render_target_update_mode = 3
 
 [node name="Camera" type="Camera" parent="ViewportContainer/Viewport"]
 transform = Transform( 1, 0, 0, 0, 0.881089, -0.472951, 0, 0.472951, 0.881089, 0, 4.42981, 0 )
-environment = SubResource( 4 )
