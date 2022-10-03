@@ -211,6 +211,44 @@ spot_angle_attenuation = 0.0220971
 
 [node name="PAUSE_MENU" parent="Player" instance=ExtResource( 4 )]
 
+[node name="Monitors_Viewport_Axis" type="Spatial" parent="."]
+
+[node name="RadarScreenViewport" type="ViewportContainer" parent="Monitors_Viewport_Axis"]
+margin_left = -925.0
+margin_top = -805.0
+margin_right = -425.0
+margin_bottom = -305.0
+
+[node name="Viewport" type="Viewport" parent="Monitors_Viewport_Axis/RadarScreenViewport"]
+size = Vector2( 500, 500 )
+handle_input_locally = false
+render_target_update_mode = 3
+
+[node name="Camera" type="Camera" parent="Monitors_Viewport_Axis/RadarScreenViewport/Viewport"]
+transform = Transform( -1, 8.74228e-08, 3.82137e-15, 0, -4.37114e-08, 1, 8.74228e-08, 1, 4.37114e-08, 0, -8, 0 )
+projection = 1
+current = true
+fov = 98.6
+size = 30.0
+
+[node name="MapScreenViewport" type="ViewportContainer" parent="Monitors_Viewport_Axis"]
+margin_left = -925.0
+margin_top = -805.0
+margin_right = -425.0
+margin_bottom = -305.0
+
+[node name="Viewport" type="Viewport" parent="Monitors_Viewport_Axis/MapScreenViewport"]
+size = Vector2( 500, 500 )
+handle_input_locally = false
+render_target_update_mode = 3
+
+[node name="Camera" type="Camera" parent="Monitors_Viewport_Axis/MapScreenViewport/Viewport"]
+transform = Transform( -1, 8.74228e-08, 3.82137e-15, 0, -4.37114e-08, 1, 8.74228e-08, 1, 4.37114e-08, 0, 68.8166, 0 )
+projection = 1
+current = true
+fov = 98.6
+size = 80.0
+
 [node name="Environment" type="Node" parent="."]
 
 [node name="Display Console" type="Node" parent="Environment"]
@@ -292,44 +330,6 @@ pixel_size = 1.0
 alpha_cut = 1
 text = "Score: 0
 HP: sample"
-
-[node name="Monitors_Viewport_Axis" type="Spatial" parent="."]
-
-[node name="RadarScreenViewport" type="ViewportContainer" parent="Monitors_Viewport_Axis"]
-margin_left = -925.0
-margin_top = -805.0
-margin_right = -425.0
-margin_bottom = -305.0
-
-[node name="Viewport" type="Viewport" parent="Monitors_Viewport_Axis/RadarScreenViewport"]
-size = Vector2( 500, 500 )
-handle_input_locally = false
-render_target_update_mode = 3
-
-[node name="Camera" type="Camera" parent="Monitors_Viewport_Axis/RadarScreenViewport/Viewport"]
-transform = Transform( -1, 8.74228e-08, 3.82137e-15, 0, -4.37114e-08, 1, 8.74228e-08, 1, 4.37114e-08, 0, -8, 0 )
-projection = 1
-current = true
-fov = 98.6
-size = 30.0
-
-[node name="MapScreenViewport" type="ViewportContainer" parent="Monitors_Viewport_Axis"]
-margin_left = -925.0
-margin_top = -805.0
-margin_right = -425.0
-margin_bottom = -305.0
-
-[node name="Viewport" type="Viewport" parent="Monitors_Viewport_Axis/MapScreenViewport"]
-size = Vector2( 500, 500 )
-handle_input_locally = false
-render_target_update_mode = 3
-
-[node name="Camera" type="Camera" parent="Monitors_Viewport_Axis/MapScreenViewport/Viewport"]
-transform = Transform( -1, 8.74228e-08, 3.82137e-15, 0, -4.37114e-08, 1, 8.74228e-08, 1, 4.37114e-08, 0, 68.8166, 0 )
-projection = 1
-current = true
-fov = 98.6
-size = 80.0
 
 [node name="ViewportContainer@Viewport@Camera" type="Camera" parent="."]
 transform = Transform( 1, 0, 0, 0, 0.881089, -0.472951, 0, 0.472951, 0.881089, 0, 4.42981, 0 )
