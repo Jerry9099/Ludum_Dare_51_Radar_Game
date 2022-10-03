@@ -11,7 +11,6 @@ var messages = [
 	"",
 	" ",
 	" ",
-	" ",
 	"Thank you for playing our game",
 	"This game was made as a part of Ludum Dare 51",
 	"Programming:\nJerry Ding\nJohnny Dai\nDavid Tuvshin\nTony Yeu\nLucas Kelly\nColby Ye\nLeah\nJustin Wang",
