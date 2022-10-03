@@ -60,7 +60,7 @@ func _physics_process(delta):
 	if translation.z > bottom_limit && velocity.z > 0:
 		velocity.z = 0
 	
-	print(translation)
+	#print(translation)
 	
 	velocity = move_and_slide(velocity, Vector3.UP)
 
