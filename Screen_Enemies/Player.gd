@@ -69,8 +69,8 @@ func die():
 	hide()
 	
 func _on_MissileDetector_body_entered(_body):
-	emit_signal("hit")
 	HP -= 1
+	emit_signal("hit")
 	if HP==0:
 		die()
 		

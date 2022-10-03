@@ -1,4 +1,4 @@
-[gd_scene load_steps=37 format=2]
+[gd_scene load_steps=36 format=2]
 
 [ext_resource path="res://Camera/raycast.gd" type="Script" id=1]
 [ext_resource path="res://Camera/Camera Holder.gd" type="Script" id=2]
@@ -22,7 +22,6 @@
 [ext_resource path="res://World/RandomPitch.gd" type="Script" id=20]
 [ext_resource path="res://Timer/TimerLogic.gd" type="Script" id=21]
 [ext_resource path="res://Dialogue/Godot-Fontpack-d244bf6170b399a6d4d26a0d906058ddf2dafdf1/Godot-Fontpack-d244bf6170b399a6d4d26a0d906058ddf2dafdf1/fonts/xolonium/xolonium-fonts-4.1/ttf/Xolonium-Regular.ttf" type="DynamicFontData" id=22]
-[ext_resource path="res://Screen_Enemies/ScoreLabel.gd" type="Script" id=23]
 
 [sub_resource type="Environment" id=1]
 background_mode = 1
@@ -147,6 +146,10 @@ font_data = ExtResource( 22 )
 [node name="world" type="Spatial"]
 script = ExtResource( 10 )
 
+[node name="ScoreTimer" type="Timer" parent="."]
+wait_time = 10.0
+autostart = true
+
 [node name="Player" type="Node" parent="."]
 script = ExtResource( 7 )
 
@@ -259,7 +262,7 @@ material_override = SubResource( 14 )
 mesh = ExtResource( 19 )
 skin = SubResource( 12 )
 
-[node name="Label3D" type="Label3D" parent="Environment/McWork"]
+[node name="Instructions Label" type="Label3D" parent="Environment/McWork"]
 transform = Transform( 1, 0, 0, 0, 0.442743, 0.896649, 0, -0.896649, 0.442743, 1.128, -0.073126, 1.39099 )
 shaded = true
 alpha_cut = 1
@@ -283,11 +286,12 @@ script = ExtResource( 21 )
 transform = Transform( 46.3261, -1.79263, -18.7263, 1.93334, 49.9626, 1.13687e-07, 18.7123, -0.724086, 46.3608, 156.374, -24.3857, 12.3899 )
 stream = ExtResource( 13 )
 
-[node name="ScoreLabel" type="Label" parent="Environment/McWork"]
-visible = false
+[node name="SCORE" type="Label3D" parent="Environment/McWork"]
+transform = Transform( 0.0171778, 0.000949498, -0.010199, 0.000586199, 0.0197901, 0.00282971, 0.0102264, -0.00272935, 0.0169697, 3.07906, 1.65361, -0.78417 )
+pixel_size = 1.0
+alpha_cut = 1
 text = "Score: 0
 HP: sample"
-script = ExtResource( 23 )
 
 [node name="Monitors_Viewport_Axis" type="Spatial" parent="."]
 
@@ -371,3 +375,5 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.24329, 5.84824 )
 stream = ExtResource( 17 )
 unit_db = 8.0
 script = ExtResource( 20 )
+
+[connection signal="timeout" from="ScoreTimer" to="." method="_on_ScoreTimer_timeout"]
