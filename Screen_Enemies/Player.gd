@@ -2,13 +2,13 @@ extends KinematicBody
 signal hit
 
 # How fast the player moves in meters per second.
-export var MAX_SPEED = 3
+export var MAX_SPEED = 2
 export var ACCELERATION = 1
 export var DECELERATION = 1
 
 export var limit_size_square = 30
 
-export var HP = 3
+export var HP = 5
 
 var top_limit = limit_size_square
 var bottom_limit = -limit_size_square

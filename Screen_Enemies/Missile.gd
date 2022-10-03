@@ -5,7 +5,7 @@ signal squashed
 # Minimum speed of the mob in meters per second.
 export var min_speed = 1
 # Maximum speed of the mob in meters per second.
-export var max_speed = 2
+export var max_speed = 1.75
 # Steer force to push the missile to track the spaceship.
 export var steer_force = 1.2
 # Maximum track speed
