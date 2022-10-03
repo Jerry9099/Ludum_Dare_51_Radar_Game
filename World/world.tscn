@@ -22,7 +22,7 @@ glow_enabled = true
 [sub_resource type="QuadMesh" id=3]
 
 [sub_resource type="ViewportTexture" id=5]
-viewport_path = NodePath("Viewport_Axis/RadarScreenViewport/Viewport")
+viewport_path = NodePath("Monitors_Viewport_Axis/RadarScreenViewport/Viewport")
 
 [sub_resource type="SpatialMaterial" id=4]
 resource_local_to_scene = true
@@ -41,7 +41,7 @@ script = ExtResource( 7 )
 script = ExtResource( 2 )
 
 [node name="Camera" type="Camera" parent="Player/Camera Holder"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.148493, 2.33106, 5.19737 )
+transform = Transform( 1, 0, 0, 0, 0.990476, 0.137687, 0, -0.137687, 0.990476, 0.148493, 2.24626, 4.29115 )
 environment = SubResource( 1 )
 script = ExtResource( 1 )
 
@@ -97,7 +97,7 @@ spot_angle_attenuation = 0.101531
 [node name="McWork" parent="Environment" instance=ExtResource( 8 )]
 
 [node name="RadarScreenMesh" type="MeshInstance" parent="Environment/McWork"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.026051, 0.474204, 0.113084 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.026051, 0.451407, 0.113084 )
 material_override = SubResource( 4 )
 cast_shadow = 0
 mesh = ExtResource( 3 )
@@ -116,7 +116,7 @@ handle_input_locally = false
 render_target_update_mode = 3
 
 [node name="Camera" type="Camera" parent="Monitors_Viewport_Axis/RadarScreenViewport/Viewport"]
-transform = Transform( -4.37114e-08, -1, -4.37114e-08, 0, -4.37114e-08, 1, -1, 4.37114e-08, 1.91069e-15, 0, -8, 0 )
+transform = Transform( -1, 8.74228e-08, 3.82137e-15, 0, -4.37114e-08, 1, 8.74228e-08, 1, 4.37114e-08, 0, -8, 0 )
 projection = 1
 fov = 98.6
 size = 20.0
