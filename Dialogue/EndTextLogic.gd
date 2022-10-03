@@ -1,11 +1,27 @@
 extends Label
 
 var messages = [
-	"My First Message", 
-	"Second Message For You"
-]
+	"You have succeeded.",
+	"Despite humanities' best efforts,\nyou have bid for enough time\n\n\nto COMPROMISE another craft.",
+	"The old crew sent out a distress signal before perishing,\n\n\n\ntheir struggle will mean NOTHING.",
+	"Like everything else in this pitful galaxy,",
+	"we will CONSUME it all.",
+	"",
+	"However,\nthe damage to the ship's lift thrusters and outdated radar system will affect our\n...\n...\nEFFICACY.",
+	"The Vastitas Fracturae will spread until there is\nNO MORE\nin the galaxy.",
+	"",
+	" ",
+	" ",
+	" ",
+	"Thank you for playing our game",
+	"This game was made as a part of Ludum Dare 51",
+	"Programming:\nJerry Ding\nJohnny Dai\nDavid Tuvshin\nTony Yeu\nLucas Kelly\nColby Ye\nLeah\nJustin Wang",
+	"Art:\nPreksha Ambrish\nJohnny Dai",
+	"Sound Design/Music:\nFelipe Jun Iglesia\nJohnny Dai",
+	"Narrative Design:\nColby Ye\nJustin Wang"
+	]
 
-var typing_speed = .1
+var typing_speed = .08
 var read_time = 2
 
 var current_message = 0
