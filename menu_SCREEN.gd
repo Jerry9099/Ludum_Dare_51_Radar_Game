@@ -1,4 +1,4 @@
-extends ColorRect
+extends TextureRect
 
 #onready var animator: AnimationPlayer = $AnimationPlayer
 # Declare member variables here. Examples:
