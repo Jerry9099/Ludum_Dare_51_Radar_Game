@@ -245,6 +245,7 @@ curve = SubResource( 5 )
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -18.2762, 0, -18.0703 )
 
 [node name="MissileTimer" type="Timer" parent="."]
+wait_time = 2.0
 autostart = true
 
 [node name="UserInterface" type="Control" parent="."]
