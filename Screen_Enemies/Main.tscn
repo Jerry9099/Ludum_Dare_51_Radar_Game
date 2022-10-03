@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://Screen_Enemies/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Screen_Enemies/Main.gd" type="Script" id=2]
@@ -16,6 +16,9 @@ size = Vector3( 100, 2, 100 )
 
 [sub_resource type="SpatialMaterial" id=9]
 albedo_color = Color( 0.00784314, 0, 0.054902, 1 )
+
+[sub_resource type="BoxShape" id=14]
+extents = Vector3( 1, 1, 50.0068 )
 
 [sub_resource type="CylinderMesh" id=3]
 
@@ -64,6 +67,25 @@ transform = Transform( 8, 0, 0, 0, -3.49691e-07, 1, 0, -8, -4.37114e-08, 0, 0.74
 
 [node name="DirectionalLight" type="DirectionalLight" parent="." groups=["Radar"]]
 transform = Transform( 1, 0, 0, 0, -0.226906, 0.973917, 0, -0.973917, -0.226906, 0, 46.7004, 0 )
+
+[node name="Border" type="StaticBody" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -43.4342, -2, -3.5799 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Border"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -7.56083, 0.820505, 3.51425 )
+shape = SubResource( 14 )
+
+[node name="CollisionShape2" type="CollisionShape" parent="Border"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 94.5063, 0.820505, 3.51425 )
+shape = SubResource( 14 )
+
+[node name="CollisionShape3" type="CollisionShape" parent="Border"]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 43.5526, 0.820505, -47.1559 )
+shape = SubResource( 14 )
+
+[node name="CollisionShape4" type="CollisionShape" parent="Border"]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 43.5526, 0.820505, 55.0825 )
+shape = SubResource( 14 )
 
 [node name="Player" parent="." groups=["Radar"] instance=ExtResource( 1 )]
 transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0 )
